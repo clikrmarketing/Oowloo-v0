@@ -1,0 +1,60 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { getEntry } from "astro:content";
+
+interface IntegrationToolsSection {
+  title: string;
+  button: {
+    enable: boolean;
+    label: string;
+    link: string;
+  };
+  list: any[];
+}
+
+const integrationTools = (await getEntry("sections", "integration-tools")).data as IntegrationToolsSection;
+const { hasBgColor } = Astro.props;
+
+const { title, button, list } = integrationTools;
+---
+
+<section class="section">
+  <div class:list={[{ "container-lg bg-primary text-white": hasBgColor }, { container: !hasBgColor }]}>
+    <div class="flex flex-col gap-8 md:gap-16">
+      <div class="flex flex-col md:flex-row gap-5 justify-between items-end">
+        <h2
+          data-aos="fade-up-sm"
+          data-aos-delay="100"
+          set:html={markdownify(title)}
+          class:list={["lg:col-5", { "text-white": hasBgColor }]}
+        />
+        {
+          button.enable && (
+            <a
+              data-aos="fade-up-sm"
+              data-aos-delay="100"
+              href={button.link}
+              class:list={["btn btn-primary", { "bg-secondary text-primary hover:bg-secondary/80": hasBgColor }]}
+            >
+              {button.label}
+            </a>
+          )
+        }
+      </div>
+      <div
+        class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-10 lg:gap-14"
+        data-aos="fade-up-sm"
+        data-aos-delay="200"
+      >
+        {
+          list.length > 0 &&
+            list.map((item) => (
+              <div class="rounded-2xl w-20 aspect-square bg-dark/20 p-3 justify-self-center">
+                <img class="w-full h-full" width={80} height={80} src={item.logo} alt="" />
+              </div>
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

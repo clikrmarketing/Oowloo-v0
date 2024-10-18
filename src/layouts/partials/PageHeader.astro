@@ -1,0 +1,17 @@
+---
+import { humanize, markdownify } from "@/lib/utils/textConverter";
+
+const { title = "", description = "" }: { title?: string; description?: string } = Astro.props;
+---
+
+<div class="container text-center">
+  <div class="space-y-6 lg:col-9 mx-auto">
+    <h1 set:text={humanize(title)} data-aos="fade-up-sm" data-aos-delay="0" />
+    <p
+      class="text-lg text-dark text-balance"
+      data-aos="fade-up-sm"
+      data-aos-delay="100"
+      set:html={markdownify(description)}
+    />
+  </div>
+</div>

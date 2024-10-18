@@ -1,0 +1,28 @@
+---
+import type { IAboutCompanies } from "@/pages/about.astro";
+
+const { companies } = Astro.props as { companies: IAboutCompanies };
+---
+
+{
+  companies.enable && (
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
+          {companies.list.length > 0 &&
+            companies.list.map((company, index) => (
+              <div
+                class="bg-theme-light rounded-3xl px-8 py-6 inline-block"
+                data-aos="fade-up-sm"
+                data-aos-delay={index * 50}
+              >
+                <div class="column ">
+                  <img width={170} height={50} src={company.logo} alt={company.name} />
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </section>
+  )
+}

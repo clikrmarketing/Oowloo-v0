@@ -1,0 +1,50 @@
+---
+import CountriesServedSection from "@/components/CountriesServedSection.astro";
+import Base from "@/layouts/Base.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import FaqSection from "@/partials/FaqSection.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import PricingSection from "@/partials/PricingSection.astro";
+import TestimonialCarousel from "@/partials/TestimonialCarousel.astro";
+import TrustedBrands from "@/partials/TrustedBrands.astro";
+import { getEntry } from "astro:content";
+
+export interface IIntegration {
+  logo: string;
+  description: string;
+  button: {
+    enable: boolean;
+    label: string;
+    link: string;
+  };
+}
+interface PageIndexProps {
+  title: string;
+  meta_title: string;
+  image: string;
+  description: string;
+  pageHeader: {
+    title: string;
+    subtitle: string;
+  };
+  list: IIntegration[];
+}
+
+const { title, description, meta_title, pageHeader } = (await getEntry("pricing", "-index")).data as PageIndexProps;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <div class="ph-spacing bg-secondary space-y-10 md:space-y-20">
+    <PageHeader title={pageHeader.title} description={pageHeader.subtitle} />
+    <PricingSection isPageHeader={true} />
+  </div>
+  <section class="section">
+    <div class="container">
+      <TrustedBrands />
+    </div>
+  </section>
+  <TestimonialCarousel variant="tertiary" />
+  <FaqSection isCentered={true} />
+  <CountriesServedSection />
+  <CallToAction hasBackground={true} />
+</Base>

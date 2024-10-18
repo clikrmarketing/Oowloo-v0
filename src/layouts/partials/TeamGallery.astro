@@ -1,0 +1,104 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { ITeamImageGallery } from "@/pages/about.astro";
+
+const { gallery } = Astro.props as { gallery: ITeamImageGallery };
+---
+
+{
+  gallery.enable && (
+    <section class="section">
+      <div class="container">
+        {/* PARENT CONTAINER */}
+        <div class="flex flex-wrap lg:flex-nowrap gap-6">
+          <div class="md:w-[48%] lg:w-[25%]">
+            {/* LEFT COLUMN */}
+            <div class="flex flex-col justify-between h-full gap-6">
+              <div
+                class="rounded-3xl bg-secondary scale-100 hover:scale-105 transition-all duration-500 p-7"
+                data-aos="zoom-in-sm"
+                data-aos-delay="50"
+              >
+                <DynamicIcon className="text-4xl mb-16 text-primary" icon={gallery.topLeftCard.icon || "FaFlagUsa"} />
+                <h3 class="text-h6 font-medium mb-4">{gallery.topLeftCard.title}</h3>
+                <p class="text-sm text-text leading-relaxed" set:html={markdownify(gallery.topLeftCard.description)} />
+              </div>
+
+              <div class="size-full" data-aos="zoom-in-sm" data-aos-delay="200">
+                <ImageMod
+                  src={gallery.bottomLeftImage}
+                  alt="Team Photo"
+                  width={290}
+                  height={270}
+                  class="w-full h-full object-cover scale-100 hover:scale-105 transition-all duration-500 rounded-3xl"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="md:w-[48%] lg:w-[42%]">
+            {/* RIGHT COLUMN */}
+            <div class="flex flex-col justify-between h-full gap-6">
+              <div class="size-full" data-aos="zoom-in-sm" data-aos-delay="100">
+                <ImageMod
+                  src={gallery.topCenterImage}
+                  alt="Team Photo"
+                  width={520}
+                  height={270}
+                  class="w-full h-full object-cover scale-100 hover:scale-105 transition-all duration-500 rounded-3xl"
+                />
+              </div>
+              <div class="size-full" data-aos="zoom-in-sm" data-aos-delay="250">
+                <ImageMod
+                  src={gallery.bottomCenterImage}
+                  alt="Team Photo"
+                  width={520}
+                  height={400}
+                  class="w-full h-full object-cover scale-100 hover:scale-105 transition-all duration-500 rounded-3xl"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="md:w-[100%] lg:w-[33%]">
+            {/* RIGHT COLUMN */}
+            <div class="flex flex-col justify-between h-full gap-6">
+              <div class="size-full" data-aos="zoom-in-sm" data-aos-delay="200">
+                <ImageMod
+                  src={gallery.topRightImage}
+                  alt="Team Photo"
+                  width={400}
+                  height={400}
+                  class="w-full h-full object-cover scale-100 hover:scale-105 transition-all duration-500 rounded-3xl"
+                />
+              </div>
+              <div
+                class="rounded-3xl bg-primary text-white p-7 scale-100 hover:scale-105 transition-all duration-500"
+                data-aos="zoom-in-sm"
+                data-aos-delay="350"
+              >
+                <h3 class="text-h6 text-white font-medium mb-4">{gallery.bottomRightCard.title}</h3>
+                <p
+                  class="text-sm text-white/80 leading-relaxed"
+                  set:html={markdownify(gallery.bottomRightCard.description)}
+                />
+                {typeof gallery.bottomRightCard.author !== "undefined" && (
+                  <>
+                    <div class="flex items-center gap-2 mt-6 pl-4">
+                      <div class="w-2 h-2 bg-white rounded-full" />
+                      <p
+                        class="text-lg font-medium text-white leading-none"
+                        set:html={gallery.bottomRightCard.author.name}
+                      />
+                    </div>
+                    <p class="text-xs ml-8 mt-3 text-white/80" set:html={gallery.bottomRightCard.author.position} />
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

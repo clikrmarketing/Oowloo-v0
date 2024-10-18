@@ -1,0 +1,45 @@
+---
+import config from "@/config/config.json";
+import dateFormat from "@/lib/utils/dateFormat";
+import { plainify } from "@/lib/utils/textConverter";
+import ImageMod from "./ImageMod.astro";
+interface DataInterface {
+  title: string;
+  meta_title: string;
+  description: string;
+  image: string;
+  date: string;
+}
+
+const { summary_length }: { summary_length: number } = config.settings;
+const props = Astro.props;
+
+const { body, slug } = props.content;
+const { title, image, date } = props.content.data as DataInterface;
+---
+
+<div
+  class="space-y-5 w-full group border border-transparent hover:border-border p-4 rounded-3xl transition-all duration-300"
+>
+  <div class="overflow-hidden rounded-3xl relative">
+    <ImageMod
+      src={image}
+      alt={title}
+      width={356}
+      height={270}
+      class="w-full group-hover:scale-105 transition-all duration-300"
+    />
+    <ImageMod
+      src={image}
+      alt={title}
+      width={356}
+      height={270}
+      class="absolute z-10 inset-0 w-full group-hover:scale-100 scale-50 opacity-0 group-hover:opacity-100 transition-all duration-500"
+    />
+  </div>
+  <div>
+    <a href={"/blog/" + slug}><h3 class="text-h5 mb-3">{title}</h3></a>
+    {body && <p class="text-sm text-dark/60  leading-relaxed" set:html={plainify(body.slice(0, summary_length))} />}
+  </div>
+  <span class="text-xs text-dark inline-block">{dateFormat(date, "dd MMM, yyyy")}</span>
+</div>

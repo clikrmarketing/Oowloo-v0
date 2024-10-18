@@ -1,0 +1,156 @@
+.isBidirectionalSlide > .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
+// INFINITE SLIDER CSS ONLY
+// Animation for normal direction
+/* 
+  ** USAGE
+    <div class="inf-slider">
+        <div class="inf-slide-track or inf-slide-track-reverse">
+            <!-- Slides here -->
+            <div class="inf-slide">Slide 1</div>
+            <div class="inf-slide">Slide 2</div>
+            <div class="inf-slide">Slide 3</div>
+        </div>
+    </div>
+*/
+$sliderHeight: 40px;
+$slideWidth: 111px;
+$animationSpeed: 40s;
+$numSlides: 4; // Update this value based on the number of slides
+
+// Define the CSS variable for number of slides
+:root {
+  --num-slides: #{$numSlides};
+}
+
+@keyframes inf-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-#{$slideWidth} * var(--num-slides)));
+  }
+}
+
+// Animation for reverse direction
+@keyframes inf-scroll-reverse {
+  0% {
+    transform: translateX(calc(-#{$slideWidth} * var(--num-slides)));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// Styling
+.inf-slider {
+  height: $sliderHeight;
+  margin: auto;
+  position: relative;
+  width: auto; // Ensure the slider width is dynamic
+
+  .inf-slide-track {
+    display: flex;
+    width: calc(#{$slideWidth} * var(--num-slides) * 2); // Double the slides width
+    animation: inf-scroll $animationSpeed linear infinite;
+  }
+
+  .inf-slide-track-reverse {
+    display: flex;
+    width: calc(#{$slideWidth} * var(--num-slides) * 2); // Double the slides width
+    animation: inf-scroll-reverse $animationSpeed linear infinite;
+  }
+
+  .inf-slide {
+    height: $sliderHeight;
+    width: $slideWidth;
+  }
+}
+
+/* AOS Custom Animations */
+[data-aos="fade-up-sm"] {
+  transform: translateY(15px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+[data-aos="fade-down-sm"] {
+  transform: translateY(-15px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+[data-aos="fade-left-sm"] {
+  transform: translateX(15px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+[data-aos="fade-right-sm"] {
+  transform: translateX(-15px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+[data-aos="zoom-out-sm"] {
+  transform: scale(1.05);
+  opacity: 0.5;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+[data-aos="zoom-in-sm"] {
+  transform: scale(0.9);
+  opacity: 0.5;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+[data-aos="fade-down-left-sm"] {
+  transform: translate3d(40px, -40px, 0);
+  opacity: 0.5;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translate3d(0px, 0px, 0);
+    opacity: 1;
+  }
+}
+[data-aos="fade-up-left-sm"] {
+  transform: translate3d(40px, 40px, 0);
+  opacity: 0.5;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translate3d(0px, 0px, 0);
+    opacity: 1;
+  }
+}
+
+[data-aos="fade-up-right-sm"] {
+  transform: translate3d(-40px, 40px, 0);
+  opacity: 0.5;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translate3d(0px, 0px, 0);
+    opacity: 1;
+  }
+}

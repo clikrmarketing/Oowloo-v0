@@ -1,0 +1,172 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import Base from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import CallToAction from "@/partials/CallToAction.astro";
+import FaqSection from "@/partials/FaqSection.astro";
+import IntegrationToolsSection from "@/partials/IntegrationToolsSection.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import ServicesSection from "@/partials/ServicesSection.astro";
+import { getEntry } from "astro:content";
+
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface HeroImageContainer {
+  leftImage: string;
+  rightImage?: string;
+}
+
+interface HeroRightImageContainer {
+  leftImageLg: string;
+  rightTopImageSm: string;
+  rightBottomImageMd: string;
+}
+
+interface HeroSection {
+  leftImageContainer: HeroImageContainer;
+  rightImageContainer: HeroRightImageContainer;
+  featureList: Feature[];
+}
+
+interface WhatWeOfferItem {
+  title: string;
+  image: string;
+  subtitle: string;
+}
+
+interface WhatWeOfferSection {
+  enable: boolean;
+  title: string;
+  list: WhatWeOfferItem[];
+}
+
+interface PageHeader {
+  title: string;
+  subtitle: string;
+}
+
+interface FeaturesPage {
+  title: string;
+  meta_title: string;
+  description: string;
+  draft: boolean;
+  pageHeader: PageHeader;
+  hero: HeroSection;
+  whatWeOffer: WhatWeOfferSection;
+  services: { enable: boolean };
+  integrationTools: { enable: boolean };
+  faq: { enable: boolean };
+}
+
+const features = (await getEntry("features", "-index")).data as FeaturesPage;
+const { title, description, meta_title, hero, services, integrationTools, pageHeader, whatWeOffer, faq } = features;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="ph-spacing">
+    <PageHeader title={pageHeader.title} description={pageHeader.subtitle} />
+  </section>
+  <section class="section">
+    <div class="container-lg bg-primary text-white">
+      <div class="grid md:grid-cols-2 gap-6 mb-10 lg:mb-20">
+        <!-- LEFT IMAGE GRID -->
+        <div class="grid grid-cols-2 gap-4 rounded-3xl bg-white/10 p-6" data-aos="fade-up-sm" data-aos-delay="100">
+          <ImageMod
+            width={272}
+            height={365}
+            class="w-full h-full object-cover rounded-2xl"
+            src={hero.leftImageContainer.leftImage}
+            alt="feature image"
+          />
+          <ImageMod
+            width={272}
+            height={365}
+            class="w-full h-full object-cover rounded-2xl"
+            src={hero.leftImageContainer.rightImage as string}
+            alt="feature image"
+          />
+        </div>
+        <!-- RIGHT IMAGE GRID -->
+        <div
+          class="grid grid-cols-2 grid-rows-3 gap-4 rounded-3xl bg-white/10 p-6 max-h-min"
+          data-aos="fade-up-sm"
+          data-aos-delay="200"
+        >
+          <img
+            width={566}
+            height={310}
+            class="row-span-3 w-full h-full object-cover rounded-2xl"
+            src={hero.rightImageContainer.leftImageLg}
+            alt="feature image"
+          />
+          <img
+            width={227}
+            height={86}
+            class="w-full h-full object-cover rounded-2xl"
+            src={hero.rightImageContainer.rightTopImageSm}
+            alt="feature image"
+          />
+          <img
+            width={227}
+            height={191}
+            class="h-full row-span-2 w-full object-cover rounded-2xl"
+            src={hero.rightImageContainer.rightBottomImageMd}
+            alt="feature image"
+          />
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          hero.featureList.map((feature, index) => (
+            <div class="flex flex-col items-center text-center" data-aos="fade-up-sm" data-aos-delay={index * 100}>
+              <div class="bg-secondary rounded-2xl w-16 h-16 grid place-items-center">
+                <span class="text-h5 font-medium font-secondary text-text">{++index}</span>
+              </div>
+              <h3 class="text-h5 font-medium font-secondary  text-white mt-9">{feature.title}</h3>
+              <p class="text-light">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {
+    whatWeOffer.enable && (
+      <section class="section">
+        <div class="container">
+          <div class="flex flex-col gap-8 md:gap-16">
+            <h2 set:html={markdownify(whatWeOffer.title)} data-aos="fade-up-sm" data-aos-delay="100" />
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {whatWeOffer.list.map((item, index) => (
+                <div class="flex flex-col gap-9 w-full" data-aos="fade-up-sm" data-aos-delay={index * 200}>
+                  <div class="bg-theme-light rounded-3xl p-7 xl:min-h-[336px]">
+                    <ImageMod
+                      width={335}
+                      height={280}
+                      src={item.image}
+                      alt="service image"
+                      class="object-cover w-full h-full rounded-2xl"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="text-h5">{item.title}</h4>
+                    <p class="text-dark/80">{item.subtitle}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {services.enable && <ServicesSection />}
+  {integrationTools.enable && <IntegrationToolsSection hasBgColor={true} />}
+  {faq.enable && <FaqSection />}
+  <CallToAction hasBackground={true} />
+</Base>

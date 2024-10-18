@@ -1,0 +1,41 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import RightArrowButton from "@/components/RightArrowButton.astro";
+import Base from "@/layouts/Base.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+---
+
+<Base title="Page Not Found">
+  <section class="ph-spacing text-center">
+    <div class="relative">
+      <div class="container">
+        <div class="flex flex-col items-center lg:col-8 mx-auto gap-10 mt-8">
+          <div data-aos="fade-up-sm" data-aos-delay="100">
+            <ImageMod
+              src="/images/404.png"
+              width={477}
+              height={318}
+              class="w-[150px] md:w-[250px] lg:w-auto"
+              alt="404 Image"
+            />
+          </div>
+          <div>
+            <h1 class="text-h3 md:text-h2 mb-4" data-aos="fade-up-sm" data-aos-delay="150">404 Not Found</h1>
+            <p data-aos="fade-up-sm" data-aos-delay="200">
+              The page you are looking for might have been removed. <br /> Please check the URL and try again.
+            </p>
+          </div>
+          <RightArrowButton
+            data-aos="fade-up-sm"
+            data-aos-delay="200"
+            label={"Back to Home"}
+            link={"/"}
+            className="btn btn-primary py-4"
+          />
+        </div>
+      </div>
+      <img src={"/images/404_bg.png"} alt="" class="w-full absolute inset-0 -z-10" />
+    </div>
+  </section>
+  <CallToAction hasBackground={true} />
+</Base>

@@ -1,0 +1,19 @@
+---
+import BlogCard from "@/components/BlogCard.astro";
+
+const { posts } = Astro.props;
+---
+
+{
+  (
+    <section class="section overflow-hidden">
+      <div class="container">
+        <div class="grid md:grid-cols-2 justify-center xl:grid-cols-3 gap-12  xl:gap-14">
+          {posts?.map((post: any) => (
+            <BlogCard content={post} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

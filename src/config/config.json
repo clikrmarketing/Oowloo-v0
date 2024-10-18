@@ -1,0 +1,47 @@
+{
+  "site": {
+    "title": "Oowloo - Management Software for Caregivers",
+    "base_url": "https://oowloo.com/",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.svg",
+    "logo_width": "160",
+    "logo_height": "35",
+    "logo_text": "Oowloo"
+  },
+
+  "settings": {
+    "search": true,
+    "pagination": 9,
+    "summary_length": 140
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "footer_description": "Start building your insights hub with <br> lightweight analysis.",
+    "copyright": "Copyright © {year} Oowloo. All Rights Reserved"
+  },
+
+  "newsletter": {
+    "form_action": "#"
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Book a Demo",
+    "link": "/contact"
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "themefisher-template",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Oowloo", 
+    "meta_image": "/images/og-image.png", 
+    "meta_description": "Whether you’re managing students, tenants, patients, or any other group in your care, our platform provides a seamless way to keep track of their whereabouts and well-being."
+  }
+}

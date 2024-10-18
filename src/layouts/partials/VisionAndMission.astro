@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { visionMission } = Astro.props;
+---
+
+{
+  visionMission.enable && (
+    <section class="section">
+      <div class="container">
+        <div class="flex flex-col md:flex-row gap-6 w-full">
+          <div class="p-8 bg-tertiary w-full rounded-3xl" data-aos="fade-up-sm" data-aos-delay="100">
+            <h2 class="mb-14 text-dark/80" set:html={visionMission.vision.title} />
+            <div class="flex gap-10 flex-wrap lg:flex-nowrap">
+              {visionMission.vision.list.map((item: any, index: number) => (
+                <div>
+                  <div class="w-full flex items-center gap-2 mb-5">
+                    <Icon name={item.icon} class="text-2xl text-dark" />
+                    <p class="text-dark font-medium" set:html={item.title} />
+                  </div>
+                  <p class="text-dark/70" set:html={item.description} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="p-8 bg-quaternary w-full rounded-3xl" data-aos="fade-up-sm" data-aos-delay="200">
+            <h2 class="mb-14 text-dark/80" set:html={visionMission.mission.title} />
+            <div class="flex gap-10 flex-wrap lg:flex-nowrap">
+              {visionMission.mission.list.map((item: any, index: number) => (
+                <div>
+                  <div class="w-full flex items-center gap-2 mb-5">
+                    <Icon name={item.icon} class="text-2xl text-dark" />
+                    <p class="text-dark font-medium" set:html={item.title} />
+                  </div>
+                  <p class="text-dark/70" set:html={item.description} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

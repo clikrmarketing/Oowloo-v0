@@ -1,0 +1,15 @@
+.btn {
+  @apply inline-block rounded-full px-6 py-3 font-medium capitalize transition leading-snug;
+}
+
+.btn-sm {
+  @apply rounded-sm px-4 py-1.5 text-sm;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary/85 transition-colors duration-300 text-white;
+}
+
+.btn-outline-primary {
+  @apply text-dark hover:bg-dark  bg-transparent hover:text-white;
+}

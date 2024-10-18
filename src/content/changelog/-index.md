@@ -1,0 +1,42 @@
+---
+title: "Optimize | Changelog"
+meta_title: ""
+description: "this is meta description"
+draft: false
+
+pageHeader:
+  title: "Changelog"
+  subtitle: "Streamline HR processes and empower your team with our products. Effortlessly manage employee data, and more."
+
+changelogs:
+  - title: "Improved Performance: Faster Integration"
+    version: "1.2.33"
+    date: "21 Mar, 2024"
+    image: "/images/changelog/changelog-1.png"
+    imageAlt: "Improved Performance"
+    desc: "We've upgraded our security measures to include authentication and advanced encryption, ensuring your data. Stay on top of your financial data with our brand-new real-time analytics dashboard, providing instant insights and more detailed metrics."
+  - title: "New Feature: Real-Time Analytics Dashboard"
+    version: "1.2.34"
+    date: "25 Mar, 2024"
+    image: "/images/changelog/changelog-2.png"
+    imageAlt: "New Feature: Real-Time Analytics Dashboard"
+    desc: "We've upgraded our security measures to include authentication and advanced encryption, ensuring your data. Stay on top of your financial data with our brand-new real-time analytics dashboard, providing instant insights and more detailed metrics."
+  - title: "Enhanced Security: Advanced Encryption"
+    version: "1.2.35"
+    date: "28 Mar, 2024"
+    image: "/images/changelog/changelog-3.png"
+    imageAlt: "Enhanced Security: Advanced Encryption"
+    desc: "We've upgraded our security measures to include authentication and advanced encryption, ensuring your data. Stay on top of your financial data with our brand-new real-time analytics dashboard, providing instant insights and more detailed metrics."
+  - title: "Improved Performance: Faster Integration"
+    version: "1.2.36"
+    date: "30 Mar, 2024"
+    image: "/images/changelog/changelog-4.png"
+    imageAlt: "Improved Performance"
+    desc: "We've upgraded our security measures to include authentication and advanced encryption, ensuring your data. Stay on top of your financial data with our brand-new real-time analytics dashboard, providing instant insights and more detailed metrics."
+  - title: "New Feature: Real-Time Analytics Dashboard"
+    version: "1.2.37"
+    date: "02 Apr, 2024"
+    image: "/images/changelog/changelog-5.png"
+    imageAlt: "New Feature: Real-Time Analytics Dashboard"
+    desc: "We've upgraded our security measures to include authentication and advanced encryption, ensuring your data. Stay on top of your financial data with our brand-new real-time analytics dashboard, providing instant insights and more detailed metrics."
+---

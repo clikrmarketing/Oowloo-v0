@@ -1,0 +1,117 @@
+---
+import Base from "@/layouts/Base.astro";
+import BookADemoSection from "@/partials/BookADemoSection.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import DiscoverProductFeature from "@/partials/DiscoverProductFeature";
+import HomeBanner from "@/partials/HomeBanner.astro";
+import PricingSection from "@/partials/PricingSection.astro";
+import ServicesWithCTA from "@/partials/ServicesWithCTA.astro";
+import TestimonialCarousel from "@/partials/TestimonialCarousel.astro";
+import WorkforceEfficiency from "@/partials/WorkforceEfficiency.astro";
+import { getEntry } from "astro:content";
+
+interface NewsletterButton {
+  enable: boolean;
+  label: string;
+  formPlaceholder: string;
+}
+
+interface BannerImages {
+  left: string;
+  center: string;
+  right: string;
+}
+
+export interface IHomepageBanner {
+  title: string;
+  content: string;
+  newsletterButton: NewsletterButton;
+  bulletpoints: string[];
+  bannerImages: BannerImages;
+}
+
+interface WorkforceEfficiencyItem {
+  title: string;
+  icon: string;
+  content: string;
+}
+
+export interface IHomepageWorkforceEfficiency {
+  title: string;
+  list: WorkforceEfficiencyItem[];
+}
+
+interface AccordionItem {
+  title: string;
+  content: string;
+  image: string;
+}
+
+export interface IHomepageDiscoverProductFeature {
+  title: string;
+  content: string;
+  accordionList: AccordionItem[];
+}
+
+interface ServiceCard {
+  head: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+  images: string | ServiceCardImages;
+}
+
+interface ServiceCardImages {
+  left: string;
+  top: string;
+  bottom: string;
+}
+
+interface CTAButton {
+  enable: boolean;
+  label: string;
+  link: string;
+}
+
+interface CTA {
+  enable: boolean;
+  head: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+  images: {
+    sm_1: string;
+    sm_2: string;
+    sm_3: string;
+    lg: string;
+  };
+  button: CTAButton;
+}
+
+export interface IHomepageServicesWithCTA {
+  leftCard: ServiceCard;
+  rightCard: ServiceCard;
+  cta: CTA;
+}
+
+interface PageContent {
+  banner: IHomepageBanner;
+  workforceEfficiency: IHomepageWorkforceEfficiency;
+  discoverProductFeature: IHomepageDiscoverProductFeature;
+  servicesWithCTA: IHomepageServicesWithCTA;
+}
+
+const homepage = await getEntry("homepage", "-index");
+const { banner, discoverProductFeature, servicesWithCTA, workforceEfficiency }: PageContent = homepage.data;
+---
+
+<Base>
+  <HomeBanner banner={banner} />
+  <WorkforceEfficiency workforceEfficiency={workforceEfficiency} />
+  <DiscoverProductFeature client:visible discoverProductFeature={discoverProductFeature} />
+  <ServicesWithCTA servicesWithCTA={servicesWithCTA} />
+  <PricingSection isPageHeader={false} />
+  <TestimonialCarousel variant="secondary" />
+  <BookADemoSection />
+  <CallToAction hasBackground={true} />
+</Base>

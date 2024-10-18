@@ -1,0 +1,232 @@
+// section style
+.section {
+  @apply pb-24 xl:pb-32;
+  &-sm {
+    @apply pb-14 xl:pb-24;
+  }
+}
+
+// container style
+.container-lg {
+  @apply container xl:max-w-[1400px] rounded-3xl p-12 xl:p-20;
+}
+
+.ph-spacing {
+  @apply pt-32  xl:pt-44 mb-20 md:mb-24 xl:mb-32;
+}
+
+// form style
+.form-control {
+  @apply mb-6;
+}
+
+.form-input {
+  @apply w-full rounded-lg border-dark/10 bg-dark/5 px-6 h-12 text-dark placeholder:text-text/60 focus:border-primary/80 transition-colors duration-500 focus:ring-transparent;
+}
+
+.form-label {
+  @apply mb-2 block  font-normal text-dark/95 font-primary;
+}
+
+// social icons
+.social-icons {
+  @apply space-x-3;
+  li {
+    @apply inline-block;
+    a {
+      @apply flex h-7 w-7 items-center justify-center rounded-full bg-primary text-center leading-9 text-secondary hover:text-white;
+      svg {
+        @apply h-5 w-5;
+      }
+    }
+  }
+}
+
+// notice
+.notice {
+  @apply mb-6 rounded-lg border px-8 py-6;
+  &-head {
+    @apply flex items-center;
+    svg {
+      @apply mr-3;
+    }
+    p {
+      @apply font-secondary text-xl font-semibold text-dark;
+    }
+  }
+  .notice-body {
+    @apply mt-3;
+    p {
+      @apply my-0;
+    }
+  }
+
+  &.note {
+    @apply text-[#1B83E2];
+    @apply border-current;
+  }
+
+  &.tip {
+    @apply text-[#40D294];
+    @apply border-current;
+  }
+
+  &.info {
+    @apply text-[#E3A72C];
+    @apply border-current;
+  }
+
+  &.warning {
+    @apply text-[#DB2C23];
+    @apply border-current;
+  }
+}
+
+// swiper pagination
+.testimonial-slider-pagination {
+  .swiper-pagination-bullet {
+    @apply h-2.5 w-2.5 bg-theme-light opacity-100;
+
+    &-active {
+      @apply h-4 w-4 bg-primary;
+    }
+  }
+}
+
+// tab
+.tab {
+  @apply overflow-hidden rounded-lg border border-border;
+  &-nav {
+    @apply flex border-b border-border bg-theme-light;
+    @apply m-0 #{!important};
+    @apply list-none #{!important};
+
+    &-item {
+      @apply cursor-pointer border-b-[3px] border-border py-2 text-lg text-dark opacity-80;
+      @apply my-0 #{!important};
+      @apply px-8 #{!important};
+
+      &.active {
+        @apply border-b-[3px] border-dark opacity-100;
+      }
+    }
+  }
+  &-content {
+    &-panel {
+      @apply p-8;
+      p {
+        @apply mb-0;
+      }
+      &.active {
+        @apply block;
+      }
+    }
+  }
+}
+
+// accordion
+.accordion {
+  @apply overflow-hidden mb-5;
+
+  &-header {
+    @apply flex w-full cursor-pointer items-center rounded-2xl bg-theme-light justify-between p-4 text-h6 text-dark;
+  }
+
+  &-icon {
+    @apply h-[.8em] w-[.8em] rotate-[-90deg] transition-transform duration-200;
+  }
+
+  &-content {
+    @apply max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-out px-6 mb-0;
+  }
+
+  &.active {
+    .accordion-icon {
+      @apply rotate-0;
+    }
+
+    .accordion-icon-active {
+      @apply opacity-0;
+    }
+
+    .accordion-content {
+      @apply max-h-screen opacity-100  p-6 rounded-lg;
+      transition:
+        max-height 0.5s ease-out,
+        opacity 0.3s ease-out,
+        padding 0.3s ease-out;
+    }
+  }
+}
+
+// content style
+.content {
+  @apply prose max-w-none;
+  @apply prose-headings:mb-[.3em] prose-headings:mt-[.6em] prose-headings:text-dark prose-headings:font-medium;
+  @apply prose-h1:text-h1-sm md:prose-h1:text-h1;
+  @apply prose-h2:text-h2-sm md:prose-h2:text-h2;
+  @apply prose-h3:text-h3-sm md:prose-h3:text-h3;
+  @apply prose-img:max-w-full prose-img:rounded-3xl;
+  @apply prose-hr:border-border;
+  @apply prose-p:text-base prose-p:text-text;
+  @apply prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-primary prose-blockquote:bg-theme-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-secondary prose-blockquote:text-2xl prose-blockquote:not-italic prose-blockquote:text-dark;
+  @apply prose-pre:rounded-lg prose-pre:bg-theme-light;
+  @apply prose-code:px-1 prose-code:text-primary;
+  @apply prose-strong:text-dark;
+  @apply prose-a:text-text prose-a:underline hover:prose-a:text-primary;
+  @apply prose-li:text-text;
+  @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:content-[""];
+  @apply prose-thead:border-border prose-thead:bg-theme-light;
+  @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-dark;
+  @apply prose-tr:border-border;
+  @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px];
+}
+
+.cta_section {
+  @apply relative;
+  &:before {
+    @apply absolute inset-0 bg-secondary translate-y-1/2 rounded-3xl;
+    content: "";
+    z-index: -1;
+  }
+}
+
+// List style
+ul.green-tick-list {
+  @apply list-none pl-0;
+  li {
+    @apply relative pl-8;
+
+    &::before {
+      content: "";
+      @apply absolute left-0 w-6 h-6 translate-y-[2px] bg-secondary text-text rounded-full;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'  fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='currentColor' d='M6 11.28 3.22 8.5l-.947.94L6 13.167l8-8-.94-.94L6 11.28z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='currentColor' d='M0 .5h16v16H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 16px 17px; /* Adjust size as needed */
+    }
+  }
+}
+
+// Image Shades
+.img-shade-b-t {
+  @apply relative inline-block;
+  &::after {
+    content: "";
+    @apply absolute inset-0;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  }
+}
+
+// Swiper
+.isBidirectionalSlide > .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}

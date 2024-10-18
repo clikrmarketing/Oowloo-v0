@@ -1,0 +1,161 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import RightArrowButton from "@/components/RightArrowButton.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { IHomepageServicesWithCTA } from "@/pages/index.astro";
+import { Icon } from "astro-icon/components";
+
+const servicesWithCTA = Astro.props.servicesWithCTA as IHomepageServicesWithCTA;
+const { leftCard, rightCard, cta } = servicesWithCTA;
+---
+
+<section class="section">
+  <div class="container">
+    <!-- CARDS -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {
+        leftCard && (
+          <div class="bg-primary text-white p-7 rounded-3xl" data-aos="fade-up-sm" data-aos-delay="100">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 ">
+                <Icon class="text-2xl" name={leftCard.icon} />
+                <span>{leftCard.head}</span>
+              </div>
+              <h3 class="text-white " set:html={leftCard.title} />
+              <p class="text-light/70" set:html={markdownify(leftCard.subtitle)} />
+            </div>
+            <div class="mt-12">
+              <div data-aos="zoom-in-sm" data-aos-delay="50">
+                <ImageMod
+                  src={leftCard.images as string}
+                  width={544}
+                  height={376}
+                  alt={leftCard.title}
+                  class="rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        )
+      }
+      {
+        rightCard && (
+          <div class="bg-secondary text-dark p-7 rounded-3xl" data-aos="fade-up-sm" data-aos-delay="200">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 ">
+                <Icon class="text-2xl" name={rightCard.icon} />
+                <span>{rightCard.head}</span>
+              </div>
+              <h3 class="text-dark " set:html={rightCard.title} />
+              <p class="text-dark/70" set:html={markdownify(rightCard.subtitle)} />
+            </div>
+            <div class="mt-12">
+              <div class="flex items-center gap-3">
+                {typeof rightCard.images !== "string" && (
+                  <>
+                    <div data-aos="zoom-in-sm" data-aos-delay="50">
+                      <ImageMod
+                        width={270}
+                        height={387}
+                        src={rightCard.images.left}
+                        alt={rightCard.title}
+                        class="w-full h-full object-cover rounded-2xl"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-3">
+                      <div data-aos="zoom-in-sm" data-aos-delay="100" class="size-full">
+                        <ImageMod
+                          width={262}
+                          height={226}
+                          src={rightCard.images.top}
+                          alt={rightCard.title}
+                          class="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                      <div data-aos="zoom-in-sm" data-aos-delay="150" class="size-full">
+                        <ImageMod
+                          width={262}
+                          height={113}
+                          src={rightCard.images.bottom}
+                          alt={rightCard.title}
+                          class="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        )
+      }
+    </div>
+    <!-- CTA -->
+    {
+      cta && cta.enable && (
+        <div class="mt-6 bg-tertiary text-dark/80 rounded-3xl px-7 py-20" data-aos="fade-up-sm" data-aos-delay="300">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            {/* LEFT SIDE */}
+            <div>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <Icon class="text-2xl" name={cta.icon} />
+                  <span class="text-red-950/90">{cta.head}</span>
+                </div>
+                <h3 set:html={cta.title} class="text-h4 text-red-950/90" />
+                <p class="text-red-950/90" set:html={markdownify(cta.subtitle)} />
+              </div>
+              <RightArrowButton
+                label={cta.button.label}
+                link={cta.button.link}
+                className="btn btn-primary py-4 bg-red-950/90 hover:bg-red-950/70 mt-9"
+              >
+                {cta.button.label}
+              </RightArrowButton>
+            </div>
+
+            {/* RIGHT SIDE: GRID IMAGES */}
+            <div class="grid grid-cols-12 grid-rows-3 gap-4">
+              <div class="size-full col-span-4 " data-aos="zoom-in-sm" data-aos-delay="100">
+                <ImageMod
+                  width={187}
+                  height={113}
+                  src={cta.images?.sm_1}
+                  alt="CTA"
+                  class="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+              <div class="size-full col-span-8 row-span-3 " data-aos="zoom-in-sm" data-aos-delay="200">
+                <ImageMod
+                  width={381}
+                  height={350}
+                  class="w-full h-full object-cover rounded-2xl"
+                  src={cta.images.lg}
+                  alt="CTA"
+                />
+              </div>
+              <div class="size-full col-span-4" data-aos="zoom-in-sm" data-aos-delay="300">
+                <ImageMod
+                  width={187}
+                  height={113}
+                  src={cta.images.sm_2}
+                  alt="CTA"
+                  class=" w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+              <div class="size-full col-span-4 " data-aos="zoom-in-sm" data-aos-delay="400">
+                <ImageMod
+                  width={187}
+                  height={113}
+                  class="w-full h-full object-cover rounded-2xl"
+                  src={cta.images.sm_3}
+                  alt="CTA"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

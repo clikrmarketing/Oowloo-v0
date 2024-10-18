@@ -1,0 +1,39 @@
+---
+import Base from "@/layouts/Base.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import IntegrationSection from "@/partials/IntegrationSection.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import { getEntry } from "astro:content";
+
+export interface IIntegration {
+  logo: string;
+  description: string;
+  button: {
+    enable: boolean;
+    label: string;
+    link: string;
+  };
+}
+interface PageIndexProps {
+  title: string;
+  meta_title: string;
+  image: string;
+  description: string;
+  pageHeader: {
+    title: string;
+    subtitle: string;
+  };
+  list: IIntegration[];
+}
+
+const { title, description, meta_title, pageHeader, list } = (await getEntry("integrations", "-index"))
+  .data as PageIndexProps;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <div class="ph-spacing mb-24">
+    <PageHeader title={pageHeader.title} description={pageHeader.subtitle} />
+  </div>
+  <IntegrationSection list={list} />
+  <CallToAction hasBackground={true} />
+</Base>

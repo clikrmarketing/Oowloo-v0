@@ -1,0 +1,80 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { Icon } from "astro-icon/components";
+import { getEntry } from "astro:content";
+
+interface ServicesItem {
+  title: string;
+  subtitle: string;
+  image: string;
+  list: string[];
+}
+
+interface ServicesSection {
+  enable: boolean;
+  list: ServicesItem[];
+}
+
+const services = (await getEntry("sections", "services")).data as ServicesSection;
+---
+
+{
+  services.list && services.list.length > 0 && (
+    <section class="section">
+      <div class="space-y-6">
+        {services.list.map((service, index) => {
+          const isOddIndex = index % 2 === 0;
+          return (
+            <div class:list={["container-lg", { "bg-tertiary": isOddIndex }, { "bg-secondary": !isOddIndex }]}>
+              <div
+                class:list={[
+                  "flex md:items-center flex-col-reverse gap-10 lg:gap-20",
+                  { "md:flex-row": isOddIndex },
+                  { "md:flex-row-reverse": !isOddIndex },
+                ]}
+              >
+                <div class="w-full md:w-1/2">
+                  <h2
+                    class="text-dark/80 mb-3"
+                    data-aos="fade-up-sm"
+                    data-aos-delay="100"
+                    set:html={markdownify(service.title)}
+                  />
+                  <p data-aos="fade-up-sm" data-aos-delay="150" class="text-dark/80">
+                    {service.subtitle}
+                  </p>
+                  <ul class="mt-16 space-y-5" data-aos="fade-up-sm" data-aos-delay="200">
+                    {service.list.map((item) => (
+                      <li class="text-dark/80 flex items-center">
+                        <div class="min-w-6 min-h-6 bg-dark/80 text-white grid place-items-center rounded-full mr-3">
+                          <Icon name="tick" />
+                        </div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="w-full md:w-1/2">
+                  <div
+                    class="bg-dark/15 rounded-3xl p-14 grid place-items-center "
+                    data-aos="zoom-in-sm"
+                    data-aos-delay="100"
+                  >
+                    <ImageMod
+                      width={390}
+                      height={425}
+                      src={service.image}
+                      alt="service image"
+                      class="object-cover  rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,90 @@
+.search {
+  &-modal {
+    @apply z-50 fixed -top-10 left-0 w-full h-full flex items-start justify-center invisible opacity-0;
+    &.show {
+      @apply visible opacity-100;
+    }
+    &-overlay {
+      @apply fixed top-0 left-0 w-full h-full bg-black opacity-80;
+    }
+  }
+  &-wrapper {
+    @apply bg-white w-[660px] max-w-[96%] mt-24 rounded-2xl overflow-hidden shadow-lg relative z-10;
+    &-header {
+      @apply p-4 relative;
+      &-input {
+        @apply border border-solid w-full focus:ring-0 focus:border-border border-border rounded-2xl h-12 pr-4 pl-10 outline-none;
+      }
+    }
+    &-body {
+      @apply max-h-[calc(100vh-350px)] overflow-y-auto bg-body;
+    }
+    &-footer {
+      @apply text-xs select-none leading-none md:flex items-center px-3.5 py-2 hidden;
+      kbd {
+        @apply bg-theme-light  text-xs leading-none text-center mr-[3px] px-1 py-0.5 rounded-[3px];
+      }
+      span:not(:last-child) {
+        @apply mr-4;
+      }
+      span:last-child {
+        @apply ml-auto;
+      }
+    }
+  }
+  &-result {
+    &-empty {
+      @apply text-center cursor-text select-none px-0 py-8;
+    }
+    &-group {
+      @apply mb-4;
+      &-title {
+        @apply text-lg text-dark  mb-[5px] px-3;
+      }
+    }
+    &-item {
+      @apply bg-body flex items-start  p-5 scroll-my-[30px]  relative;
+      mark {
+        @apply bg-yellow-200 rounded-[2px];
+      }
+      &-title {
+        @apply text-sm font-medium text-dark/90;
+      }
+      &-link::after {
+        @apply absolute top-0 right-0 bottom-0 left-0 z-10 content-[""];
+      }
+      &-description {
+        @apply text-sm text-dark/15 line-clamp-1 mt-1;
+      }
+      &-content {
+        @apply mx-0 my-1.5 empty:hidden line-clamp-1 text-xs text-dark/60;
+      }
+      &-taxonomies {
+        @apply text-sm flex flex-wrap items-center text-light;
+        svg {
+          @apply inline-block mr-1;
+        }
+      }
+
+      &-active,
+      &:focus,
+      &:hover {
+        @apply bg-dark/5;
+        .search-result-item {
+          &-title {
+            @apply text-dark;
+          }
+          &-description {
+            @apply text-dark/80;
+          }
+          &-content {
+            @apply text-dark/90;
+          }
+          &-taxonomies {
+            @apply text-dark/90;
+          }
+        }
+      }
+    }
+  }
+}

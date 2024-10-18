@@ -1,0 +1,24 @@
+---
+import ImageMod from "./ImageMod.astro";
+
+const { changelog } = Astro.props;
+const { title, version, date, image, imageAlt, desc } = changelog;
+---
+
+<div class="border border-border rounded-3xl p-4">
+  <div class="flex flex-col md:flex-row items-center gap-10 md:gap-6">
+    <div class="md:w-[40%] p-4 rounded-2xl bg-theme-light">
+      <ImageMod width={420} height={360} src={image} alt={imageAlt} class="size-full object-cover" />
+    </div>
+    <div class="md:w-[60%]">
+      <div class="flex justify-between items-center mb-6">
+        <span class="inline-block text-xs px-4 py-1.5 bg-dark/15 rounded-full align-baseline text-dark/70"
+          >Version {version}</span
+        >
+        <span>{date}</span>
+      </div>
+      <h3 class="text-h5 mb-4" set:html={title} />
+      <p set:html={desc} class="text-dark/75" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+---
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import { getEntry } from "astro:content";
+
+const bookdemo = (await getEntry("book-demo", "-index")).data;
+---
+
+<Base title={bookdemo.title} description={bookdemo.description}>
+  <section class="ph-spacing">
+    <div class="container max-w-[880px]">
+      <div class="bg-theme-light text-dark p-8 rounded-3xl" data-aos="fade-up-sm" data-aos-delay="100">
+        <div class="space-y-3">
+          <h2 class="" set:html={bookdemo.hero.title} />
+          <p class="" set:html={bookdemo.hero.subtitle} />
+        </div>
+        <div class="mt-12">
+          <form action={config.params.contact_form_action} method="post">
+            <div class="form-control">
+              <label class="form-label" for="fullName">Full Name</label>
+              <input class="form-input" type="text" id="fullName" name="fullName" placeholder="John Doe" required /><br
+              />
+            </div>
+
+            <div class="form-control">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="Enter your mail" required />
+            </div>
+
+            <div class="form-control">
+              <label class="form-label" for="company">Company</label>
+              <input
+                class="form-input"
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company name"
+                required
+              />
+            </div>
+
+            <div class="form-control">
+              <label class="form-label" for="message">Message</label>
+              <textarea
+                class="form-input h-auto"
+                id="message"
+                rows="3"
+                name="message"
+                placeholder="Type your messages"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary font-normal py-4"> Send A Message </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <CallToAction hasBackground={true} />
+</Base>

@@ -1,0 +1,51 @@
+---
+import type { IAccomplishments } from "@/pages/about.astro";
+
+const { accomplishments } = Astro.props as { accomplishments: IAccomplishments };
+---
+
+{
+  accomplishments.enable && (
+    <section class="section">
+      <div class="container">
+        <div class="flex items-center justify-between flex-col lg:flex-row gap-10">
+          <div class="lg:w-[40%]">
+            <div class="space-y-6 text-center lg:text-left">
+              <h2 class="text-h3 xl:text-h2" data-aos="fade-up-sm" data-aos-delay="100">
+                {accomplishments.title}
+              </h2>
+              <p class="text-dark" data-aos="fade-up-sm" data-aos-delay="150" set:html={accomplishments.subtitle} />
+            </div>
+          </div>
+          <div class="lg:w-[60%]">
+            <div class="flex justify-around gap-6">
+              {accomplishments.list.map((item, index) => (
+                <div
+                  class="flex flex-col items-center lg:items-start gap-4"
+                  data-aos="fade-up-sm"
+                  data-aos-delay={++index * 150}
+                >
+                  <h3 class=" text-h2 xl:text-h1 font-medium">
+                    <span
+                      data-countup
+                      data-countup-number={item.number}
+                      data-countup-duration="1500"
+                      data-countup-easing="ease-in-out"
+                    />
+                    <span>{item.prefix}</span>
+                  </h3>
+                  <p set:html={item.subtitle} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+<script>
+  import { countUp } from "@/lib/utils/countup";
+
+  document.addEventListener("astro:page-load", countUp);
+</script>

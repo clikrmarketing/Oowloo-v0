@@ -1,0 +1,110 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { getEntry } from "astro:content";
+import ImageMod from "./ImageMod.astro";
+
+interface Country {
+  title: string;
+  image: string;
+}
+
+interface MarqueeChildList {
+  marqueeChildList: Country[];
+}
+
+interface Card {
+  title: string;
+  desc: string;
+  marqueeList?: MarqueeChildList[];
+  image?: string;
+  imageAlt?: string;
+}
+
+interface Button {
+  enable: boolean;
+  label: string;
+  link: string;
+}
+
+interface ManagementPlatformPage {
+  title: string;
+  subtitle: string;
+  button: Button;
+  firstCard: Card;
+  secondCard: Card;
+}
+
+const { title, subtitle, button, firstCard, secondCard } = (await getEntry("sections", "countries-served"))
+  .data as ManagementPlatformPage;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-3 gap-6">
+      <div class="text-center md:text-left md:col-span-4 xl:col-span-1">
+        <h2 set:html={title} class="mb-4" data-aos="fade-up-sm" data-aos-delay="100" />
+        <p set:html={subtitle} class="text-text mb-9" data-aos="fade-up-sm" data-aos-delay="150" />
+        {
+          button.enable && (
+            <a href={button.link} class="btn btn-primary py-4 my-4" data-aos="fade-up-sm" data-aos-delay="200">
+              {button.label}
+            </a>
+          )
+        }
+      </div>
+      <div
+        class="rounded-3xl bg-secondary p-6 space-y-6 border md:col-span-2 xl:col-span-1"
+        data-aos="fade-up-sm"
+        data-aos-delay="200"
+      >
+        <h3 class="text-h4 text-center text-primary" set:html={firstCard.title} />
+
+        <div class="space-y-5">
+          {
+            (
+              <div class="space-y-2">
+                {firstCard.marqueeList &&
+                  firstCard.marqueeList.length &&
+                  firstCard.marqueeList.map((item, index) => (
+                    <div class="inf-slider overflow-hidden">
+                      <div
+                        class:list={[
+                          { "inf-slide-track": index % 2 === 0 },
+                          { "inf-slide-track-reverse": index % 2 !== 0 },
+                        ]}
+                      >
+                        {item.marqueeChildList &&
+                          item.marqueeChildList.length &&
+                          [...item.marqueeChildList, ...item.marqueeChildList].map((childItem, index) => (
+                            <div class="inf-slide mr-2">
+                              <div class="bg-white rounded-md p-2 flex items-center gap-2 min-w-max">
+                                <ImageMod src={childItem.image} alt={childItem.title} width={32} height={24} />
+                                <p class="text-xs text-primary font-light" set:html={markdownify(childItem.title)} />
+                              </div>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            )
+          }
+        </div>
+        <p set:html={markdownify(firstCard.desc)} class="text-primary text-center" />
+      </div>
+      <div
+        class="rounded-3xl bg-primary p-6 space-y-6 md:col-span-2 xl:col-span-1"
+        data-aos="fade-up-sm"
+        data-aos-delay="300"
+      >
+        <h3 class="text-h4 text-center text-white" set:html={secondCard.title} />
+        {
+          secondCard.image && (
+            <ImageMod src={secondCard.image as string} alt={secondCard.imageAlt as string} width={348} height={183} />
+          )
+        }
+        <p set:html={markdownify(secondCard.desc)} class="text-light text-center" />
+      </div>
+    </div>
+  </div>
+</section>

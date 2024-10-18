@@ -1,0 +1,37 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { IIntegration } from "@/pages/integrations.astro";
+
+const list = Astro.props.list as IIntegration[];
+---
+
+<section class="section">
+  <div class="container">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        list.length &&
+          list.map((integration, index) => {
+            const { logo, description, button } = integration;
+            const aosDelay = 100 * (index % 3);
+            return (
+              <div data-aos="fade-up-sm" data-aos-delay={aosDelay}>
+                <div class="p-9 rounded-3xl border border-border hover:bg-primary/10 transition-all duration-300 group flex flex-col justify-between items-start size-full">
+                  <div>
+                    <ImageMod src={logo} class="max-h-[48px] w-auto" alt="integration logo" width={164} height={48} />
+                    <hr class="my-7 group-hover:border-primary/10 border-border " />
+                    <p class=" transition-all duration-300" set:html={markdownify(description)} />
+                  </div>
+                  {button && button.enable && (
+                    <a href={button.link} class="btn btn-primary  mt-10">
+                      {button.label}
+                    </a>
+                  )}
+                </div>
+              </div>
+            );
+          })
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+import Logo from "@/components/Logo.astro";
+import Social from "@/components/Social.astro";
+import config from "@/config/config.json";
+import menu from "@/config/menu.json";
+import social from "@/config/social.json";
+
+const { footer_links_column_1, footer_links_column_2, footer_links_column_3 } = menu;
+---
+
+<footer class="bg-secondary text-text">
+  <div class="container pt-24 pb-20">
+    <div class="flex flex-col md:flex-row gap-16 lg:gap-20">
+      <div class="w-full md:w-[50%] xl:w-[60%]">
+        <div class="flex flex-col gap-10 justify-between h-full" data-aos="fade-right-sm" data-aos-delay="100">
+          <div>
+            <Logo />
+            <p class="text-dark mt-4 lg:col-8" set:html={config.params.footer_description} />
+          </div>
+          <Social source={social.main} className="social-icons " />
+        </div>
+      </div>
+      <div class="w-full md:w-[50%] xl:w-[40%]">
+        <div class="flex flex-wrap md:justify-between gap-10 lg:gap-14">
+          <div data-aos="fade-right-sm" data-aos-delay="200">
+            <p class="text-dark font-medium mb-7">Products</p>
+            <ul>
+              {
+                footer_links_column_1.map((item) => (
+                  <li class="mb-4 last:mb-0">
+                    <a href={item.url} class="text-dark/85 hover:text-dark">
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div data-aos="fade-right-sm" data-aos-delay="250">
+            <p class="text-dark font-medium mb-7">Company</p>
+            <ul>
+              {
+                footer_links_column_2.map((item) => (
+                  <li class="mb-4 last:mb-0">
+                    <a href={item.url} class="text-dark/85 hover:text-dark">
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div data-aos="fade-right-sm" data-aos-delay="300">
+            <p class="text-dark font-medium mb-7">Company</p>
+            <ul>
+              {
+                footer_links_column_3.map((item) => (
+                  <li class="mb-4 last:mb-0">
+                    <a href={item.url} class="text-dark/85 hover:text-dark">
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

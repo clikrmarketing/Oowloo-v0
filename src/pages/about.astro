@@ -1,0 +1,130 @@
+---
+import Base from "@/layouts/Base.astro";
+import AboutCompanies from "@/partials/AboutCompanies.astro";
+import Accomplishments from "@/partials/Accomplishments.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import IntegrationToolsSection from "@/partials/IntegrationToolsSection.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import TeamGallery from "@/partials/TeamGallery.astro";
+import TeamTestimonials from "@/partials/TeamTestimonials.astro";
+import VisionAndMission from "@/partials/VisionAndMission.astro";
+import { getEntry } from "astro:content";
+
+interface Author {
+  name: string;
+  position: string;
+}
+interface IconCard {
+  title: string;
+  icon?: string;
+  description: string;
+  author?: Author;
+}
+
+export interface ITeamImageGallery {
+  enable: boolean;
+  topLeftCard: IconCard;
+  topCenterImage: string;
+  topRightImage: string;
+  bottomLeftImage: string;
+  bottomCenterImage: string;
+  bottomRightCard: IconCard;
+}
+
+interface Accomplishment {
+  number: number;
+  prefix: string;
+  subtitle: string;
+}
+
+export interface IAccomplishments {
+  enable: boolean;
+  title: string;
+  subtitle: string;
+  list: Accomplishment[];
+}
+
+interface MissionVisionItem {
+  title: string;
+  icon: string;
+  description: string;
+}
+
+interface MissionVisionSection {
+  title: string;
+  list: MissionVisionItem[];
+}
+
+export interface IAboutCompanies {
+  enable: boolean;
+  list: {
+    name: string;
+    logo: string;
+  }[];
+}
+
+interface TestimonialStat {
+  title: string;
+  subtitle: string;
+}
+
+interface Testimonial {
+  name: string;
+  position: string;
+  company: string;
+  profileImage: string;
+  description: string;
+  stats: TestimonialStat[];
+}
+
+export interface ITeamTestimonials {
+  enable: boolean;
+  title: string;
+  arrowIcon: string;
+  list: Testimonial[];
+}
+interface StoryPage {
+  title: string;
+  meta_title: string;
+  description: string;
+  draft: boolean;
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+  gallery: ITeamImageGallery;
+  accomplishments: IAccomplishments;
+  visionMission: {
+    enable: boolean;
+    mission: MissionVisionSection;
+    vision: MissionVisionSection;
+  };
+  companies: IAboutCompanies;
+  teamTestimonials: ITeamTestimonials;
+}
+
+const {
+  title,
+  meta_title,
+  description,
+  hero,
+  gallery,
+  accomplishments,
+  visionMission,
+  companies,
+  teamTestimonials,
+}: StoryPage = (await getEntry("about", "-index")).data;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="ph-spacing">
+    <PageHeader title={hero.title} description={hero.subtitle} />
+  </section>
+  <TeamGallery gallery={gallery} />
+  <Accomplishments accomplishments={accomplishments} />
+  <VisionAndMission visionMission={visionMission} />
+  <AboutCompanies companies={companies} />
+  <TeamTestimonials testimonials={teamTestimonials} />
+  <IntegrationToolsSection hasBgColor={false} />
+  <CallToAction hasBackground={true} />
+</Base>

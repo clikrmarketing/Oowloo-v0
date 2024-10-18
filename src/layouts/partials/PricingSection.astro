@@ -1,0 +1,265 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { getEntry } from "astro:content";
+
+interface Price {
+  amount: number;
+  period: "year" | "month";
+  per: string;
+}
+
+interface Badge {
+  enable: boolean;
+  text: string;
+}
+
+interface CTA {
+  enable: boolean;
+  text: string;
+  link: string;
+}
+
+interface Plan {
+  title: string;
+  description: string;
+  price_prefix: string;
+  features: string[];
+  price: {
+    yearly: Price;
+    monthly: Price;
+  };
+  badge: Badge;
+  cta: CTA;
+}
+
+interface PricingPlanContent {
+  title: string;
+  heading: string;
+  subtitle: string;
+  plans_labels: string[];
+  discount: string;
+  plans: Plan[];
+}
+
+const { isPageHeader } = Astro.props;
+const { title, subtitle, discount, plans, plans_labels }: PricingPlanContent = (await getEntry("sections", "pricing"))
+  .data;
+---
+
+<section class="section">
+  <div class="container">
+    <div
+      class:list={[
+        "mb-9 lg:mb-14 flex ",
+        { "justify-center ": isPageHeader },
+        { "flex-col items-center gap-8 lg:flex-row lg:justify-between lg:items-end": !isPageHeader },
+      ]}
+    >
+      <!-- LEFT SIDE -->
+      {
+        !isPageHeader && (
+          <div class="lg:col-6 text-center lg:text-left">
+            <h2 class="h1 mb-3" data-aos="fade-up-sm" data-aos-delay="100">
+              {title}
+            </h2>
+            <p data-aos="fade-up-sm" data-aos-delay="200" set:html={markdownify(subtitle)} />
+          </div>
+        )
+      }
+
+      <!-- RIGHT TOGGLER -->
+      <div
+        class={`${isPageHeader ? "text-center" : "text-center lg:text-right"}`}
+        data-aos={isPageHeader ? "fade-up-sm" : "fade-up-sm"}
+        data-aos-delay={isPageHeader ? "100" : "100"}
+      >
+        <div class="flex items-center gap-4">
+          <span class="text-base text-dark">Billed {plans_labels[0]}</span>
+          <label class="inline-flex items-center cursor-pointer" for="pricing-switch">
+            <input
+              type="checkbox"
+              value=""
+              id="pricing-switch"
+              aria-label="pricing switch"
+              class="sr-only peer pricing-check"
+            />
+            <div
+              class="relative w-[48px] h-[24px] bg-primary peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-[22px] rtl:peer-checked:after:-translate-x-[20px] peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:duration-500 after:ease-in-out peer-checked:bg-primary"
+            >
+            </div>
+          </label>
+          <span class="text-base text-dark">Billed {plans_labels[1]}</span>
+        </div>
+        <span class="text-xs text-dark/80">(Save up to ${discount})</span>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-6">
+      {
+        plans &&
+          plans.length &&
+          plans.map((plan, index) => {
+            const isEvenIndex = index % 2 !== 0;
+            return (
+              <div
+                data-aos="fade-up-sm"
+                data-aos-delay={index * 200}
+                class:list={[
+                  "p-8 rounded-3xl flex flex-col justify-between relative",
+                  { "bg-theme-light text-dark": isEvenIndex },
+                  { "bg-primary text-white": !isEvenIndex },
+                ]}
+              >
+                <div>
+                  <h3 class:list={["h5 mb-2", { " text-dark": isEvenIndex }, { " text-white": !isEvenIndex }]}>
+                    <span>{markdownify(plan.title)}</span>
+                  </h3>
+                  <p class="text-sm" set:html={markdownify(plan.description)} />
+                  <hr class:list={["my-6", { "border-dark/30": isEvenIndex }, { "border-border/30": !isEvenIndex }]} />
+                  <ul class="flex flex-col gap-4">
+                    {plan.features &&
+                      plan.features.length &&
+                      plan.features.map((feature, index) => {
+                        return (
+                          <li
+                            class:list={[
+                              "flex items-center gap-x-3",
+                              { "text-dark": isEvenIndex },
+                              { "text-white": !isEvenIndex },
+                            ]}
+                          >
+                            <svg
+                              class:list={["w-4 h-4", { "fill-dark": isEvenIndex }, { "fill-white": !isEvenIndex }]}
+                              viewBox="0 0 12 16"
+                            >
+                              <g>
+                                <path d="M6 11.28 3.22 8.5l-.947.94L6 13.167l8-8-.94-.94L6 11.28z" />
+                              </g>
+                            </svg>
+                            <span class="text-sm">{feature}</span>
+                          </li>
+                        );
+                      })}
+                  </ul>
+                  <hr class:list={["my-6", { "border-dark/30": isEvenIndex }, { "border-border/30": !isEvenIndex }]} />
+
+                  <div class="flex justify-between items-center flex-wrap gap-2">
+                    {/* PRICE NUMBERS */}
+                    <div class="flex items-center gap-2">
+                      <h3
+                        class=""
+                        class:list={[
+                          "flex items-center",
+                          { " text-dark": isEvenIndex },
+                          { " text-white": !isEvenIndex },
+                        ]}
+                      >
+                        <span>{plan.price_prefix}</span>
+                        <span
+                          class="data-count"
+                          data-count-yearly={plan.price.yearly.amount}
+                          data-count-monthly={plan.price.monthly.amount}
+                          set:html={plan.price.monthly.amount}
+                        />
+                      </h3>
+                      <div class="flex flex-col gap-1 text-xs">
+                        <span class="text-monthly">/per {plan.price.monthly.period}</span>
+                        <span class="text-monthly">/per {plan.price.monthly.per}</span>
+                        <span class="text-yearly hidden">/per {plan.price.yearly.period}</span>
+                        <span class="text-yearly hidden">/per {plan.price.yearly.per}</span>
+                      </div>
+                    </div>
+
+                    {/* BADGE */}
+                    {plan.badge.enable && (
+                      <div
+                        class:list={[
+                          "rounded-full px-3 py-1 text-base",
+                          { "bg-primary text-white": isEvenIndex },
+                          { "bg-theme-light text-dark": !isEvenIndex },
+                        ]}
+                      >
+                        <span class="">{plan.badge.text}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* CTA BUTTON */}
+                {plan.cta.enable && (
+                  <a
+                    href={plan.cta.link}
+                    class:list={[
+                      "btn btn-primary py-4 w-full mt-6 text-center",
+                      { "bg-primary": isEvenIndex },
+                      { "bg-secondary text-primary hover:bg-secondary/90": !isEvenIndex },
+                    ]}
+                  >
+                    <span>{plan.cta.text}</span>
+                  </a>
+                )}
+              </div>
+            );
+          })
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function pricingInit() {
+    // Select the toggle switch element
+    const toggleSwitch = document.querySelector<HTMLInputElement>(".pricing-check");
+    const numbers = document.querySelectorAll<HTMLDivElement>(".data-count");
+    toggleSwitch &&
+      toggleSwitch.addEventListener("change", function () {
+        if (toggleSwitch.checked) {
+          numbers.forEach(function (number) {
+            const yearlyCount = number.getAttribute("data-count-yearly");
+            if (yearlyCount) {
+              number.innerHTML = yearlyCount;
+              animateCounter(number, parseInt(yearlyCount, 10));
+            }
+          });
+          toggleVisibility(".text-yearly", "d-block", "hidden");
+          toggleVisibility(".text-monthly", "hidden", "d-block");
+        } else {
+          numbers.forEach(function (number) {
+            const monthlyCount = number.getAttribute("data-count-monthly");
+            if (monthlyCount) {
+              number.innerHTML = monthlyCount;
+              animateCounter(number, parseInt(monthlyCount, 10));
+            }
+          });
+          toggleVisibility(".text-monthly", "block", "hidden");
+          toggleVisibility(".text-yearly", "hidden", "d-block");
+        }
+      });
+
+    function animateCounter(element: HTMLElement, endValue: number) {
+      let startValue = 0;
+      const duration = 300;
+      let startTime: number | null = null;
+
+      function step(currentTime: number) {
+        if (!startTime) startTime = currentTime;
+        const progress = currentTime - startTime;
+        const value = Math.min(progress / duration, 1) * (endValue - startValue) + startValue;
+        element.innerHTML = Math.ceil(value).toString();
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function toggleVisibility(selector: string, addClass: string, removeClass: string) {
+      const elements = document.querySelectorAll<HTMLElement>(selector);
+      elements.forEach(function (element) {
+        element.classList.add(addClass);
+        element.classList.remove(removeClass);
+      });
+    }
+  }
+  document.addEventListener("astro:page-load", pricingInit);
+</script>

@@ -1,0 +1,121 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import config from "@/config/config.json";
+import { Icon } from "astro-icon/components";
+import { getEntry } from "astro:content";
+
+interface RightSection {
+  name: string;
+  designation: string;
+  profileImage: string;
+  content: string;
+}
+
+interface BookDemoFrontmatter {
+  head: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+  button: {
+    enable: boolean;
+    label: string;
+    link: string;
+  };
+  rightSection: RightSection;
+}
+
+const { head, rightSection, subtitle, title, icon, button } = (await getEntry("sections", "book-demo"))
+  .data as BookDemoFrontmatter;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="flex md:flex-row flex-col-reverse gap-6 [&>div]:flex-1 [&>div]:grid">
+      <div class="md:w-[50%]" data-aos="fade-up-sm" data-aos-delay="100">
+        <div class="bg-theme-light text-dark p-7 rounded-3xl">
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <Icon class="text-2xl" name={icon} />
+              <span>{head}</span>
+            </div>
+            <h3 class="" set:html={title} />
+            <p class="" set:html={subtitle} />
+          </div>
+          <div class="mt-12">
+            <form action={config.params.contact_form_action} method="post">
+              <div class="form-control">
+                <label class="form-label" for="fullName">Full Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="John Doe"
+                  required
+                /><br />
+              </div>
+
+              <div class="form-control">
+                <label class="form-label" for="email">Email Address</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="Enter your mail" required />
+              </div>
+
+              <div class="form-control">
+                <label class="form-label" for="company">Company</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your company name"
+                  required
+                />
+              </div>
+
+              <div class="form-control">
+                <label class="form-label" for="message">Message</label>
+                <textarea
+                  class="form-input h-auto"
+                  id="message"
+                  rows="3"
+                  name="message"
+                  placeholder="Type your messages"
+                  required></textarea>
+              </div>
+
+              {
+                button && button.enable && (
+                  <button type="submit" class="btn btn-primary">
+                    {button.label}
+                  </button>
+                )
+              }
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-[50%]" data-aos="fade-up-sm" data-aos-delay="300">
+        <div class="rounded-3xl overflow-hidden relative">
+          <div class="img-shade-b-t isolate w-full h-full">
+            <ImageMod
+              width={600}
+              height={774}
+              src={rightSection.profileImage}
+              alt={rightSection.name}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div class="absolute bottom-0 left-0 right-0 px-7 py-10 text-white">
+            <p class="text-lg leading-relaxed w-5/6" set:html={rightSection.content} />
+            <div class="flex items-center gap-2 mt-6 pl-4">
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <h3 class="text-lg font-medium text-white leading-none" set:html={rightSection.name} />
+            </div>
+            <p class="text-xs ml-8 mt-3" set:html={rightSection.designation} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
