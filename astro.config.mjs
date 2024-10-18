@@ -12,7 +12,7 @@ import config from "./src/config/config.json";
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "https://clikrmarketing.github.io",
-  base: config.site.base_path ? config.site.base_path : "/oowloo-v1",
+  base: config.site.base_path ? config.site.base_path : "/oowloo-v0",
   trailingSlash: config.site.trailing_slash ? "never" : "ignore",
   image: {
     service: squooshImageService(),
