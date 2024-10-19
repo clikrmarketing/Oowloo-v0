@@ -12,10 +12,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 yarn.lock
-package-lock.json
+
 
 # environment variables
-.env
+.env 
 .env.production
 
 # macOS-specific files
