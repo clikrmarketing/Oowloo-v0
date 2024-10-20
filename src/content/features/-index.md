@@ -16,14 +16,13 @@ hero:
       rightTopImageSm: "/images/features/hero-right-sm-1.png"
       rightBottomImageMd: "/images/features/hero-right-sm-2.png"
   featureList:
-    - title: "Onboarding"
-      description: "Putting our customers at the heart of everything we do, we strive to deliver exceptional experiences."
-    - title: "Content Management"
-      description: "Putting our customers at the heart of everything we do, we strive to deliver exceptional experiences."
-    - title: "Distribution"
-      description: "Putting our customers at the heart of everything we do, we strive to deliver exceptional experiences."
-    - title: "Optimization"
-      description: "Putting our customers at the heart of everything we do, we strive to deliver exceptional experiences."
+    - title: "Set-up your Space"
+      description: "Create profiles for everyone in your care and assign roles to your team members."
+    - title: "Schedule & Track"
+      description: "Use our scheduling tool to plan wellness checks, inspections, and other essential tasks. Track the status and location of every individual with real-time updates."
+    - title: "Review & Report"
+      description: "Access detailed reports that provide full transparency into your daily operations, helping you make informed decisions and maintain the highest standards of care."
+
 
 whatWeOffer:
   enable: true

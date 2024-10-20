@@ -1,14 +1,31 @@
 // section style
 .section {
+ 
+  margin: 1rem;
+  @media screen and (min-width:767px){
+    margin: 2rem; 
+  }
+
+
   @apply pb-24 xl:pb-32;
   &-sm {
     @apply pb-14 xl:pb-24;
   }
 }
 
+.container{
+  padding: 0;
+  // margin: 1rem;
+
+}
+
 // container style
 .container-lg {
   @apply container xl:max-w-[1400px] rounded-3xl p-12 xl:p-20;
+}
+
+.container{
+  max-width: 1680px !important;
 }
 
 .ph-spacing {
@@ -183,7 +200,14 @@
 }
 
 .cta_section {
-  @apply relative;
+  margin: 0 2rem;
+  top: 18rem;
+  @apply relative; 
+
+ 
+  @media screen and (min-width:768px){
+    margin: 0 4rem;
+  }
   &:before {
     @apply absolute inset-0 bg-secondary translate-y-1/2 rounded-3xl;
     content: "";

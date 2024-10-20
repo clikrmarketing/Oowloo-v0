@@ -10,7 +10,16 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .header {
-  @apply py-6 fixed inset-x-0 bg-theme-light; 
+  @apply py-6 fixed inset-x-0 ; 
+  background-color: white;
+
+  top: 0;
+  nav{
+    padding: 0 1rem;
+    @media screen and (min-width:768px){
+      padding: 0 2rem;
+    }
+  }
 }
 
 // apply above css only below 1024px
@@ -108,4 +117,12 @@ input#nav-toggle:checked ~ #nav-menu {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+footer{
+  padding-top: 16rem;
+
+  >.container{
+    padding-right:4rem;
+    padding-left: 4rem;
+  }
 }

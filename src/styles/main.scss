@@ -12,8 +12,14 @@
   @import "buttons";
   @import "search";
   @import "animations";
+  @import "who-can-benefit";
 }
 
 @layer utilities {
   @import "utilities";
+}
+
+
+.text-darkBlue{
+  color: #134054;
 }

@@ -26,7 +26,7 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
         {services.list.map((service, index) => {
           const isOddIndex = index % 2 === 0;
           return (
-            <div class:list={["container-lg", { "bg-tertiary": isOddIndex }, { "bg-secondary": !isOddIndex }]}>
+            <div class:list={["container-lg", { "bg-light": isOddIndex }, { "bg-light": !isOddIndex }]}>
               <div
                 class:list={[
                   "flex md:items-center flex-col-reverse gap-10 lg:gap-20",
@@ -45,19 +45,19 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
                     {service.subtitle}
                   </p>
                   <ul class="mt-16 space-y-5" data-aos="fade-up-sm" data-aos-delay="200">
-                    {service.list.map((item) => (
+                    {/* {service.list.map((item) => (
                       <li class="text-dark/80 flex items-center">
                         <div class="min-w-6 min-h-6 bg-dark/80 text-white grid place-items-center rounded-full mr-3">
                           <Icon name="tick" />
                         </div>
                         <span>{item}</span>
                       </li>
-                    ))}
+                    ))} */}
                   </ul>
                 </div>
                 <div class="w-full md:w-1/2">
                   <div
-                    class="bg-dark/15 rounded-3xl p-14 grid place-items-center "
+                    class="bg-secondary rounded-3xl p-5 grid place-items-center "
                     data-aos="zoom-in-sm"
                     data-aos-delay="100"
                   >
@@ -66,7 +66,7 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
                       height={425}
                       src={service.image}
                       alt="service image"
-                      class="object-cover  rounded-2xl"
+                      class="object-cover  rounded-2xl w-full"
                     />
                   </div>
                 </div>

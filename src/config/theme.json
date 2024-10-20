@@ -9,9 +9,9 @@
         "body": "#fff",
         "border": "#eaeaea",
         "theme_light": "#F5F6F4",
-        "theme_dark": "" 
+        "theme_dark": "#134054"  
       },
-      "text_color": { "default": "#4b5852", "dark": "#030e09", "light": "#f5f6f4" }
+      "text_color": { "default": "#4b5852", "dark": "#030e09", "light": "#f5f6f4", "darkBlue": "#134054" } 
     }
   },
   "fonts": {
@@ -21,6 +21,6 @@
       "secondary": "Outfit:wght@500",
       "secondary_type": "sans-serif"
     },
-    "font_size": { "base": "16", "scale": "1.250" }
+    "font_size": { "base": "16", "scale": "1.250" } 
   }
 }
