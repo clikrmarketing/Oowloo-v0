@@ -127,7 +127,11 @@ interface HeroSection {
   rightImageContainer: HeroRightImageContainer;
   featureList: Feature[];
 }
-
+interface Button {
+  enable: boolean;
+  label: string;
+  link: string;
+}
 interface PageContent {
   banner: IHomepageBanner;
   workforceEfficiency: IHomepageWorkforceEfficiency;
@@ -136,6 +140,7 @@ interface PageContent {
   whatWeOffer: WhatWeOfferSection;
   services: { enable: boolean };
   hero: HeroSection;
+  
 }
 
 
@@ -145,7 +150,7 @@ const { banner, discoverProductFeature, servicesWithCTA, services,whatWeOffer, h
 --- 
 
 <Base>
-  <HomeBanner banner={banner} />
+  <HomeBanner banner={banner}/>
   
   {
     whatWeOffer.enable && (

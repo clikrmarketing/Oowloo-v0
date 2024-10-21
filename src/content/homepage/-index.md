@@ -56,7 +56,7 @@ workforceEfficiency:
 
 # Discover Product Feature
 discoverProductFeature:
-  title: "Who Can Benefit From Oowloo?"
+  title: "How Can Oowloo Benefit You?"
   content: "Our product is designed to help you streamline HR processes and empower your team. Here are some of the key features:"
   accordionList: 
     - title: Ensure Accountability
@@ -126,4 +126,10 @@ hero:
 services:
   enable: true
   # Content for the feature highlights are in sections/services.md
+  
+button:
+  enable: true
+  label: "Book a Demo"
+  link: "/book-demo"
+
 ---

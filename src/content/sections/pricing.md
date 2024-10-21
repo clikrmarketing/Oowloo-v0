@@ -5,24 +5,23 @@ subtitle: "Streamline HR processes and empower your team with our products. Effo
 plans_labels:
   - "Monthly"
   - "Yearly"
-discount: "-30%"
+discount: "-20%"
 plans:
-  - title: Essential
-    description: Designed for growing businesses with more advanced needs.
+  - title: Starter Plan
+    description: Ideal for individuals or small facilities.
     price_prefix: "$"
     features:
-      - Centralized employee database
-      - Clock-in/clock-out functionality
-      - Applicant tracking system (ATS)
-      - Learning management system (LMS)
-      - Performance management tools
+      - Up to 5 users
+      - Core features- wellness checks, asset tracking, basic reporting.
+      - Real-time updates and reminders.
+      - Automated compliance checks and basic incident logging.
     price:
       yearly:
-        amount: 260
+        amount: 49
         period: year
         per: user
       monthly:
-        amount: 210
+        amount: 49
         period: month
         per: user
     badge:
@@ -32,22 +31,22 @@ plans:
       enable: true
       text: Get Started
       link: "/contact"
-  - title: Premium
-    description: Advanced features for established businesses seeking growth
+  - title: Team Plan
+    description: For small teams looking for collaboration and oversight.
     price_prefix: "$"
     features:
-      - All Essential features
-      - Performance management tools
-      - Advanced reporting and analytics
-      - Custom workflows
-      - Priority support
+      - Up to 10 users.
+      - All Starter features.
+      - Team management dashboard for oversight and reporting.
+      - Enhanced compliance and incident reporting.
+      - Priority customer support.
     price:
       yearly:
-        amount: 420
+        amount: 199
         period: year
         per: user
       monthly:
-        amount: 340
+        amount: 199
         period: month
         per: user
     badge:
@@ -57,25 +56,25 @@ plans:
       enable: true
       text: Get Started
       link: "/contact"
-  - title: Business
-    description: Comprehensive solution for large enterprises with complex needs
-    price_prefix: "$"
+  - title: Enterprise Plan
+    description: Custom-built solutions for larger organizations. Unlimited users and custom features to meet specific needs.
+    price_prefix: ""
     features:
-      - All Premium features
-      - Multi-company management
-      - Advanced security controls
-      - API access
-      - Dedicated account manager
-      - Custom branding
+      - Unlimited wellness and incident checks.
+      - Custom dashboards and analytics.
+      - Advanced asset and people tracking.
+      - Integration with other systems (HR, security, etc.).
+      - Dedicated account manager and onboarding support.
+      - API access for advanced customization.
     price:
       yearly:
-        amount: 580
-        period: year
-        per: user
+        amount: Call For Pricing
+        period: 
+        per: 
       monthly:
-        amount: 470
-        period: month
-        per: user
+        amount: Call For Pricing
+        period: 
+        per: 
     badge:
       enable: false
       text: "🚀 Best Value"

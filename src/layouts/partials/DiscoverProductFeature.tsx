@@ -30,18 +30,14 @@ const DiscoverProductFeature = ({
                   {title}
                 </h2>
               )}
-              {content && (
-                <p data-aos="fade-up-sm" data-aos-delay="100">
-                  {content}
-                </p>
-              )}
+            
             </div>
         </div>
       </div>
       <div className="container second-container">
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-10 ">
           <div className="md:w-[100%] mx-auto lg:w-[40%] xl:w-[50%]">
-            <div className="bg-primary p-5  "> 
+            <div className=" "> 
               <img
                 width={412}
                 height={420}
@@ -53,7 +49,7 @@ const DiscoverProductFeature = ({
           </div>
           <div className="lg:w-[60%] xl:w-[50%]">
            
-            <div data-aos="fade-up-sm flex flex-col" data-aos-delay="200">
+            <div data-aos="fade-up-sm" data-aos-delay="200" className="flex flex-col gap-2">
               {accordionList.map((item, index) => (
                 <DiscoverProductAccordion
                   key={index}
@@ -103,7 +99,7 @@ const DiscoverProductAccordion = ({
 
   return (
     <div
-      className={`p-6 transition-all duration-300 ${isOpen ? "bg-theme-light" : "bg-body cursor-pointer"}`}
+      className={`p-6 transition-all duration-300 rounded-3xl ${isOpen ? "bg-theme-light" : "bg-body cursor-pointer"}`}
       onClick={handleOnClick}
     >
       <div className="flex gap-4 justify-between">

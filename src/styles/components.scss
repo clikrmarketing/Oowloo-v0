@@ -198,15 +198,18 @@
   @apply prose-tr:border-border;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px];
 }
-
+#main-content{
+  position: relative;
+  padding-bottom: 4rem;
+}
 .cta_section {
-  margin: 0 2rem;
-  top: 18rem;
-  @apply relative; 
+  margin: 0 1rem;
+  bottom: -18rem; 
+  @apply absolute; 
 
  
   @media screen and (min-width:768px){
-    margin: 0 4rem;
+    margin: 0 2rem;
   }
   &:before {
     @apply absolute inset-0 bg-secondary translate-y-1/2 rounded-3xl;
