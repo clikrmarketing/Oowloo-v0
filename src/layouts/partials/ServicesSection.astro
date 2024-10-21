@@ -29,12 +29,12 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
             <div class:list={["container-lg", { "bg-light": isOddIndex }, { "bg-light": !isOddIndex }]}>
               <div
                 class:list={[
-                  "flex md:items-center flex-col-reverse gap-10 lg:gap-20",
+                  "flex md:items-center flex-col-reverse gap-10 lg:gap-20 justify-center",
                   { "md:flex-row": isOddIndex },
                   { "md:flex-row-reverse": !isOddIndex },
                 ]}
               >
-                <div class="w-full md:w-1/2">
+                <div class="w-full md:w-1/2 max-w-lg">
                   <h2
                     class="text-dark/80 mb-3"
                     data-aos="fade-up-sm"
@@ -55,7 +55,7 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
                     ))} */}
                   </ul>
                 </div>
-                <div class="w-full md:w-1/2">
+                <div class="w-full md:w-1/2 max-w-lg">
                   <div
                     class="bg-secondary rounded-3xl p-5 grid place-items-center "
                     data-aos="zoom-in-sm"

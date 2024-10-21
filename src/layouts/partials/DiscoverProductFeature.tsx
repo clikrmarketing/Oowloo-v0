@@ -43,7 +43,7 @@ const DiscoverProductFeature = ({
                 height={420}
                 src={activeImage}
                 alt="Profile Image"
-                className="rounded-3xl shadow-lg w-full"
+                className="rounded-3xl shadow-lg w-full h-full object-cover"
               />
             </div>
           </div>

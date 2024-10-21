@@ -200,12 +200,24 @@
 }
 #main-content{
   position: relative;
-  padding-bottom: 4rem;
+  // padding-bottom: 4rem;
+}
+#footer-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  footer{
+    width: 100%;
+  }
 }
 .cta_section {
   margin: 0 1rem;
-  bottom: -18rem; 
-  @apply absolute; 
+  // top: -18rem; 
+  max-width: 1680px; 
+  // @apply absolute; 
 
  
   @media screen and (min-width:768px){
