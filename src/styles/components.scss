@@ -213,11 +213,37 @@
     width: 100%;
   }
 }
+.cta-white-logo{
+  width: 50px;
+  height: auto;
+}
 .cta_section {
   margin: 0 1rem;
   // top: -18rem; 
   max-width: 1680px; 
+  position: relative;
   // @apply absolute; 
+
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+
+  #cta_background{
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -2rem;
+    height: 200px;
+    width: calc(4rem + 100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  &:before{
+    position: relative;
+    display: none;
+  }
 
  
   @media screen and (min-width:768px){
@@ -227,6 +253,12 @@
     @apply absolute inset-0 bg-secondary translate-y-1/2 rounded-3xl;
     content: "";
     z-index: -1;
+  }
+}
+
+.book-a-demo{
+  .container{
+    max-width: 1280px !important;
   }
 }
 

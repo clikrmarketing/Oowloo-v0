@@ -1,9 +1,9 @@
 ---
 enable: true
 icon: "stars"
-head: Analytics and Reporting
-title: "Grow Your Team, Grow Your Business"
-description: "Streamline HR processes and empower your team with our products. Facilitate manage employee data, and more in one platform."
+head: Oowloo
+title: "Elevate your performance with Oowloo"
+description: "Unlock the power of Oowloo’s software to streamline team management, track progress, and optimize operations."
 ctaImages:
   left: "/images/cta/cta-1.png"
   topMd: "/images/cta/cta-3.png"

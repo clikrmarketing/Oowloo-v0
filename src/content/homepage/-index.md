@@ -11,7 +11,7 @@ banner:
     -  No Credit Card Required
     -  Cancel Anytime
   bannerImages:
-    left: "/images/homepage/banner-1.png"
+    left: "/images/homepage/banner-main.jpg"
     center: "/images/homepage/banner-2.png"
     right: "/images/homepage/banner-3.png"
   trustedBrands:
@@ -22,7 +22,7 @@ banner:
       - "/images/trustedBrands/3.png"
       - "/images/trustedBrands/4.png"
       - "/images/trustedBrands/5.png"
-      - "/images/trustedBrands/6.png"
+      - "/images/trustedBrands/6.png" 
   
 
 whatWeOffer:
@@ -126,10 +126,12 @@ hero:
 services:
   enable: true
   # Content for the feature highlights are in sections/services.md
-  
+
 button:
   enable: true
   label: "Book a Demo"
   link: "/book-demo"
-
+faq:
+  enable: true
+  # Content for the FAQ are in sections/faq.md
 ---

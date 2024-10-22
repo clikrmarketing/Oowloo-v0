@@ -46,7 +46,7 @@ const { testimonials, arrowIcon }: TestimonialsContent = (await getEntry("sectio
                     <p
                       class:list={[
                         "text-h5 md:text-h4 leading-relaxed font-secondary font-medium",
-                        { "text-dark": variant === "tertiary" },
+                        { "text-light": variant === "tertiary" },
                         { "text-dark": variant === "secondary" },
                       ]}
                       set:html={markdownify(testimonial.content)}

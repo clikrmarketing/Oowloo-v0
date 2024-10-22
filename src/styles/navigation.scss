@@ -120,6 +120,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 footer{
   // padding-top: 16rem;
+  overflow: hidden;
 
   >.container{
     padding-right:4rem;

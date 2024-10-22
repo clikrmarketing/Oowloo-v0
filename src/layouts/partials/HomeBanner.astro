@@ -47,34 +47,17 @@ const { bannerImages, bulletpoints, content, newsletterButton, title } = banner;
       {
         bannerImages && (
           <div class="w-full grid grid-cols-12 gap-5">
-            <div data-aos="fade-up-sm" data-aos-delay="200" class="col-span-5 w-full h-full">
+            <div data-aos="fade-up-sm" data-aos-delay="200" class="col-span-12 w-full h-full">
               <ImageMod
                 src={bannerImages.left}
                 alt="Banner Image"
                 class=" w-full h-full object-cover rounded-2xl"
-                width={500}
-                height={400}
+                width={1215}
+                height={596}
               />
             </div>
 
-            <div class="col-span-3 w-full h-full" data-aos="fade-up-sm" data-aos-delay="350">
-              <ImageMod
-                src={bannerImages.center}
-                alt="Banner Image"
-                class="w-full h-full object-cover rounded-2xl"
-                width={300}
-                height={400}
-              />
-            </div>
-            <div class="col-span-4 w-full h-full" data-aos="fade-up-sm" data-aos-delay="500">
-              <ImageMod
-                src={bannerImages.right}
-                alt="Banner Image"
-                class=" w-full h-full object-cover rounded-2xl"
-                width={400}
-                height={400}
-              />
-            </div>
+            
           </div>
         )
       }

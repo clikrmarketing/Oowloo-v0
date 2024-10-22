@@ -8,5 +8,14 @@
     .second-container{
         padding-left: 2rem; 
         padding-right: 2rem;  
+
+
+        .active{
+            .accordion-icon{
+                .rotate-90{
+                    display: none;
+                }
+            }
+        }
     }
 }

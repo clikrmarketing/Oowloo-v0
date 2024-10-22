@@ -2,11 +2,11 @@
 head: Connect with Us
 # Place Icons inside src/icons folder and mention filename without extension
 icon: "stars" 
-title: Book A Free Demo
-subtitle: Streamline HR processes and empower your team with our products. Facilitate manage employee data.
+title: Get In Touch 
+subtitle: Book a demo with us to see how Oowloo can seamlessly fit your needs, simplifying your tasks and boosting efficiency.
 button:
   enable: true
-  label: "Book a Demo"
+  label: "Send Message"
 
 rightSection:
   name: Brooklyn Lean
