@@ -156,13 +156,13 @@ const { banner, discoverProductFeature, servicesWithCTA, services,whatWeOffer, h
   
   {
     whatWeOffer.enable && (
-      <section class="section">
+      <section class="section" id="product">
         <div class="container">
           <div class="flex flex-col gap-8 md:gap-16">
             <h2 set:html={markdownify(whatWeOffer.title)} data-aos="fade-up-sm" data-aos-delay="100" />
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-6">
               {whatWeOffer.list.map((item, index) => (
-                <div class="flex flex-col gap-9 w-full" data-aos="fade-up-sm" data-aos-delay={index * 200}>
+                <div class="flex flex-col gap-6 w-full" data-aos="fade-up-sm" data-aos-delay={index * 200}>
                   <div class="bg-primary rounded-3xl p-3 xl:min-h-[336px]">
                     <ImageMod
                       width={335}

@@ -21,7 +21,7 @@ const DiscoverProductFeature = ({
   const [openAccordionIndex, setOpenAccordionIndex] = React.useState(0);
 
   return (
-    <section className="section who-can-benefit bg-secondary">
+    <section className="section who-can-benefit bg-secondary" id="features">
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-10 p-7 ">
         <div className="mb-14">
@@ -36,14 +36,14 @@ const DiscoverProductFeature = ({
       </div>
       <div className="container second-container">
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-10 ">
-          <div className="md:w-[100%] mx-auto lg:w-[40%] xl:w-[50%]">
-            <div className=" "> 
+          <div className="w-full md:w-[100%] mx-auto lg:w-[40%] xl:w-[50%]">
+            <div className=" aspect-video lg:aspect-square">  
               <img
                 width={412}
                 height={420}
                 src={activeImage}
                 alt="Profile Image"
-                className="rounded-3xl shadow-lg w-full h-full object-cover"
+                className="rounded-3xl shadow-lg w-full h-full object-cover "
               />
             </div>
           </div>

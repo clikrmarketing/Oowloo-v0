@@ -1,6 +1,6 @@
 ---
-title: "Pricing Plan"
-subtitle: "Streamline HR processes and empower your team with our products. Effortlessly manage employee data, and more."
+title: "Simple Transparent Pricing"
+subtitle: "We simplify people management, making your job easier every step of the way."
 
 plans_labels:
   - "Monthly"
@@ -30,7 +30,7 @@ plans:
     cta:
       enable: true
       text: Get Started
-      link: "/contact"
+      link: "/#contact-us"
   - title: Team Plan
     description: For small teams looking for collaboration and oversight.
     price_prefix: "$"
@@ -55,7 +55,7 @@ plans:
     cta:
       enable: true
       text: Get Started
-      link: "/contact"
+      link: "/#contact-us"
   - title: Enterprise Plan
     description: Custom-built solutions for larger organizations. Unlimited users and custom features to meet specific needs.
     price_prefix: ""
@@ -81,5 +81,5 @@ plans:
     cta:
       enable: true
       text: Get Started
-      link: "/contact"
+      link: "/#contact-us"
 ---

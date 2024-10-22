@@ -10,48 +10,31 @@
       "url": "/#features"
     },
     {
+      "name": "Pricing",
+      "url": "/#pricing"
+    },
+    {
       "name": "FAQ",
       "url": "/#faq"
+    }
+    
+  ],
+  "footer_links_column_1": [
+    {
+      "name": "Product",
+      "url": "/#product"
+    },
+    {
+      "name": "Features",
+      "url": "/#features"
     },
     {
       "name": "Pricing",
       "url": "/#pricing"
-    }
-  ],
-  "footer_links_column_1": [
-    {
-      "name": "Features",
-      "url": "/features"
     },
     {
-      "name": "Integrations",
-      "url": "/integrations"
-    },
-    {
-      "name": "Pricing",
-      "url": "/pricing"
-    },
-    {
-      "name": "Contact",
-      "url": "/contact"
-    }
-  ],
-  "footer_links_column_2": [
-    {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Blog",
-      "url": "/blog"
-    },
-    {
-      "name": "Blog Details",
-      "url": "/blog/post-1"
-    },
-    {
-      "name": "Book a Demo",
-      "url": "/book-demo"
+      "name": "FAQ",
+      "url": "/#faq"
     }
   ],
   "footer_links_column_3": [
@@ -62,10 +45,6 @@
     {
       "name": "Conditions",
       "url": "/terms"
-    },
-    {
-      "name": "FAQ",
-      "url": "/pricing#faq_section"
     }
   ]
 }

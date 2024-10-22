@@ -18,7 +18,7 @@
   },
 
   "params": {
-    "contact_form_action": "#",
+    "contact_form_action": "https://submit-form.com/6u9WXzBrD",
     "footer_description": "Start building your insights hub with <br> lightweight analysis.",
     "copyright": "Copyright © {year} Oowloo. All Rights Reserved"
   },
@@ -30,7 +30,7 @@
   "navigation_button": {
     "enable": true,
     "label": "Book a Demo",
-    "link": "/contact"
+    "link": "/#contact-us"
   },
 
   "disqus": {

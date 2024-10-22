@@ -198,6 +198,9 @@
   @apply prose-tr:border-border;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px];
 }
+html {
+  scroll-behavior: smooth;
+}
 #main-content{
   position: relative;
   // padding-bottom: 4rem;
@@ -208,11 +211,33 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 
   footer{
     width: 100%;
   }
 }
+.section.ph-spacing{
+  position: relative;
+} 
+.half-background{ 
+  position: absolute;
+  height: 40vw;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.custom-image-wrapper{
+  position: relative;
+ img{
+  z-index: 2;
+  position: relative;
+ }
+ 
+}
+
 .cta-white-logo{
   width: 50px;
   height: auto;

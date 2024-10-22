@@ -6,7 +6,7 @@ import menu from "@/config/menu.json";
 import social from "@/config/social.json";
 import CallToAction from "@/partials/CallToAction.astro";
 
-const { footer_links_column_1, footer_links_column_2, footer_links_column_3 } = menu;
+const { footer_links_column_1,  footer_links_column_3 } = menu;
 ---
 <div id="footer-wrapper">
   <CallToAction hasBackground={true} />
@@ -38,20 +38,7 @@ const { footer_links_column_1, footer_links_column_2, footer_links_column_3 } = 
                 }
               </ul>
             </div>
-            <div data-aos="fade-right-sm" data-aos-delay="250">
-              <p class="text-dark font-medium mb-7">Company</p>
-              <ul>
-                {
-                  footer_links_column_2.map((item) => (
-                    <li class="mb-4 last:mb-0">
-                      <a href={item.url} class="text-dark/85 hover:text-dark">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
+            
             <div data-aos="fade-right-sm" data-aos-delay="300">
               <p class="text-dark font-medium mb-7">Company</p>
               <ul>
