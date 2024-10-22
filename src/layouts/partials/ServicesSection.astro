@@ -21,7 +21,7 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
 
 {
   services.list && services.list.length > 0 && (
-    <section class="section">
+    <section class="section alternate-services">
       <div class="space-y-6">
         {services.list.map((service, index) => {
           const isOddIndex = index % 2 === 0;
@@ -57,7 +57,14 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
                 </div>
                 <div class="w-full md:w-1/2 max-w-lg">
                   <div
-                    class="bg-secondary rounded-3xl p-5 grid place-items-center "
+                    
+                    class:list={[
+                      "rounded-3xl p-5 grid place-items-center ",
+                      { "bg-secondary ": index == 0 },
+                      { "bg-primary ": index == 1 },
+                      { "bg-tertiary": index == 2 },
+                      { "bg-theme-dark": index == 3 },
+                    ]}
                     data-aos="zoom-in-sm"
                     data-aos-delay="100"
                   >

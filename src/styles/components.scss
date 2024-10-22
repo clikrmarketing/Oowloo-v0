@@ -244,6 +244,11 @@ html {
   width: 50px;
   height: auto;
 }
+.set-up-process, .alternate-services{
+  .container-lg{
+    max-width: 1680px !important; 
+  }
+}
 .cta_section {
   margin: 0 1rem;
   // top: -18rem; 
@@ -260,11 +265,10 @@ html {
     position: absolute;
     z-index: 0;
     bottom: 0;
-    left: -2rem;
+    left: -100vw;
     height: 200px;
-    width: calc(4rem + 100%);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    width: 300vw;
+    
   }
 
   &:before{
