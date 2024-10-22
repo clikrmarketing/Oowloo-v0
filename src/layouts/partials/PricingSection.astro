@@ -47,7 +47,7 @@ const { title, subtitle, discount, plans, plans_labels }: PricingPlanContent = (
 ---
 
 <section class="section" id="pricing">
-  <div class="container">
+  <div class="container flex flex-col gap-6">
     <div
       class:list={[
         "mb-9 lg:mb-14 flex ",
@@ -178,6 +178,155 @@ const { title, subtitle, discount, plans, plans_labels }: PricingPlanContent = (
             );
           })
       }
+    </div>
+    <div class="grid grid-cols-1 justify-center gap-6">
+
+              <div
+                data-aos="fade-up-sm"
+                data-aos-delay={3 * 200}
+                class:list={[
+                  "p-8 rounded-3xl flex flex-col justify-between relative bg-tertiary text-white"
+                ]}
+              >
+                <div>
+                  <h3 class:list={["h5 mb-2 text-white"]}>
+                    <span>AI Agent - Add-On</span>
+                  </h3>
+                  <p class="text-sm"> Available as an add-on for all plans.
+                    24/7 AI support that provides real-time updates, answers queries, and schedules wellness checks.
+                    </p>
+                  <hr class:list={["my-6 border-border/30"]} />
+                  <ul class="flex flex-col gap-4">
+                    <li
+                    class:list={[
+                      "flex items-center gap-x-3 text-white"
+                    ]}
+                  >
+                    <svg
+                      class:list={["w-4 h-4 fill-white"]}
+                      viewBox="0 0 12 16"
+                    >
+                      <g>
+                        <path d="M6 11.28 3.22 8.5l-.947.94L6 13.167l8-8-.94-.94L6 11.28z" />
+                      </g>
+                    </svg>
+                    <span class="text-sm">Family and partner access for real-time updates.</span>
+                  </li>
+
+                  <li
+                    class:list={[
+                      "flex items-center gap-x-3 text-white"
+                    ]}
+                  >
+                    <svg
+                      class:list={["w-4 h-4 fill-white"]}
+                      viewBox="0 0 12 16"
+                    >
+                      <g>
+                        <path d="M6 11.28 3.22 8.5l-.947.94L6 13.167l8-8-.94-.94L6 11.28z" />
+                      </g>
+                    </svg>
+                    <span class="text-sm">Incident logging and compliance tracking.</span>
+                  </li>
+
+                  <li
+                    class:list={[
+                      "flex items-center gap-x-3 text-white"
+                    ]}
+                  >
+                    <svg
+                      class:list={["w-4 h-4 fill-white"]}
+                      viewBox="0 0 12 16"
+                    >
+                      <g>
+                        <path d="M6 11.28 3.22 8.5l-.947.94L6 13.167l8-8-.94-.94L6 11.28z" />
+                      </g>
+                    </svg>
+                    <span class="text-sm">Integration with email and text notifications.</span>
+                  </li>
+                  <li
+                  class:list={[
+                    "flex items-center gap-x-3 text-white"
+                  ]}
+                >
+                  <svg
+                    class:list={["w-4 h-4 fill-white"]}
+                    viewBox="0 0 12 16"
+                  >
+                    <g>
+                      <path d="M6 11.28 3.22 8.5l-.947.94L6 13.167l8-8-.94-.94L6 11.28z" />
+                    </g>
+                  </svg>
+                  <span class="text-sm">Intelligent task scheduling and follow-up.</span>
+                </li>
+
+                  </ul>
+                  <hr class:list={["my-6 border-border/30"]} />
+
+                  <div class="flex flex-col  flex-wrap gap-2">
+                    {/* PRICE NUMBERS */}
+                    <div class="flex items-center gap-2">
+                      <h3
+                        class=""
+                        class:list={[
+                          "flex items-center text-white"
+                        ]}
+                      >
+                        <span>$</span>
+                        <span
+                          class="data-count"
+                          data-count-yearly={500}
+                          data-count-monthly={500}
+                          set:html={500}
+                        />
+                      </h3>
+                      <div class="flex flex-col gap-1 text-xs">
+                        <span class="text-monthly"> /per month</span>
+                       
+                        <span class="text-yearly hidden">/per user</span>
+                      
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <h3
+                        class=""
+                        class:list={[
+                          "flex items-center text-white"
+                        ]}
+                      >
+                        <span>+$</span>
+                        <span
+                          class="data-count"
+                          data-count-yearly={10}
+                          data-count-monthly={10}
+                          set:html={10} 
+                        />
+                      </h3>
+                      <div class="flex flex-col gap-1 text-xs">
+                        <span class="text-monthly"> /per user</span>
+                       
+                        <span class="text-yearly ">/per month</span>
+                      
+                      </div>
+                    </div>
+
+                     
+
+                  </div>
+                </div>
+
+                  <!-- <a
+                    href='/#contact-us'
+                    class:list={[
+                      "btn btn-primary py-4 w-full mt-6 text-center bg-secondary text-primary hover:bg-secondary/90"
+                    ]}
+                  >
+                    <span>Get Started</span>
+                  </a> -->
+              
+              </div>
+
+        
     </div>
   </div>
 </section>

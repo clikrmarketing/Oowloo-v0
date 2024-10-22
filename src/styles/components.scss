@@ -203,6 +203,7 @@ html {
 }
 #main-content{
   position: relative;
+  overflow: hidden;
   // padding-bottom: 4rem;
 }
 #footer-wrapper{
@@ -223,6 +224,7 @@ html {
 .half-background{ 
   position: absolute;
   height: 40vw;
+  max-height: 650px;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -245,7 +247,7 @@ html {
 .cta_section {
   margin: 0 1rem;
   // top: -18rem; 
-  max-width: 1680px; 
+  // max-width: 1680px; 
   position: relative;
   // @apply absolute; 
 

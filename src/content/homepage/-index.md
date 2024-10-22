@@ -31,17 +31,17 @@ whatWeOffer:
   list:
     - title: "Smart Location Management"
       image: "/images/features/feature-card-1.png"
-      subtitle: "Oowloo’s real-time analytics empower administrators with vital insights into care recipient well-being and staff performance. Our intuitive dashboards drive informed decisions, ensuring better outcomes and greater operational efficiency."
+      subtitle: "Boost accountability with strategically placed QR codes throughout your facility. Oowloo’s smart location verification ensures staff reports are generated on-site, giving you real-time reliability and complete operational oversight."
     - title: "Comprehensive Care Analytics"
       image: "/images/features/feature-card-2.png"
-      subtitle: "Unlock real-time insights into key performance indicators and team activities. Our powerful reporting tools give you the data you need to make informed decisions and improve overall operational efficiency."
+      subtitle: "Oowloo’s real-time analytics empower administrators with vital insights into care recipient well-being and staff performance. Our intuitive dashboards drive informed decisions, ensuring better outcomes and greater operational efficiency."
     - title: "AI-Powered Care Companion"
       image: "/images/features/feature-card-3.png"
       subtitle: "Meet the Oowloo AI, your intelligent assistant for staying connected. This advanced agent enables authorized family, friends, and partners to securely check on their loved ones' well-being through natural conversations, as well as via text and email. "
 
 # WorkforceEfficiency
 workforceEfficiency:
-  title: "Elevate your workforce efficiency"
+  title: "Elevate your workforce efficiency" 
   list:
     - title: "Customer Centricity"
       # Place Icons inside src/icons folder and mention filename without extension
@@ -73,7 +73,7 @@ discoverProductFeature:
       image: "/images/portraits/portrait_4.png"
     - title: The Oowloo AI Agent
       content: "Oowloo’s AI agent is available around the clock, offering real-time support to administrators, caregivers, and family members. Whether it's answering routine questions, providing updates, or delivering important reminders, our AI ensures seamless communication and assistance, day or night. With 24-hour availability help is always just a message away."
-      image: "/images/portraits/portrait_4.png"
+      image: "/images/portraits/portrait_1.png"
 
 # Services With CTA
 servicesWithCTA:
