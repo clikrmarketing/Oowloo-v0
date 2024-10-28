@@ -1,0 +1,48 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import config from "@/config/config.json";
+import type { IHomepageBanner } from "@/pages/index.astro";
+import TrustedBrands from "./TrustedBrands.astro";
+import RightArrowButton from "@/components/RightArrowButton.astro";
+
+
+
+const banner = Astro.props.banner as IHomepageBanner;
+
+const { bannerImages, bulletpoints, content, newsletterButton, title } = banner;
+---
+
+<section class="section ph-spacing  ">
+  <div class="container">
+    <div class="flex flex-col items-center gap-16 lg:gap-28 text-center">
+      <div class="lg:col-12 flex flex-col items-center gap-y-8">
+        <div>
+          <h1 class="mb-2 text-darkBlue" data-aos="fade-up-sm" data-aos-delay="0" >
+            Thanks for Reaching out!
+          </h1>
+          <h3 class="mb-5 text-darkBlue" data-aos="fade-up-sm" data-aos-delay="0">We will get back to you as soon as we can.</h2>
+          
+       
+        </div>
+          
+        
+       <div class="flex items-center gap-4">
+
+
+          <a
+          class="btn btn-primary py-4 hidden lg:inline-block"
+          aria-label="Learn More"
+          href="/#product"
+          data-aos="fade-up-sm"
+          data-aos-delay="200"
+        >
+          Learn More
+        </a>
+       </div>
+
+      </div>
+      
+      
+    </div>
+  </div>
+</section>

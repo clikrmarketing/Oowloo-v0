@@ -1,0 +1,160 @@
+---
+import Base from "@/layouts/Base.astro";
+import ImageMod from "@/components/ImageMod.astro";
+import BookADemoSection from "@/partials/BookADemoSection.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import DiscoverProductFeature from "@/partials/DiscoverProductFeature";
+import ThanksBanner from "@/partials/ThanksBanner.astro";
+import PricingSection from "@/partials/PricingSection.astro";
+import ServicesWithCTA from "@/partials/ServicesWithCTA.astro";
+import TestimonialCarousel from "@/partials/TestimonialCarousel.astro";
+import ServicesSection from "@/partials/ServicesSection.astro";
+import { getEntry } from "astro:content";
+import FaqSection from "@/partials/FaqSection.astro";
+
+interface NewsletterButton {
+  enable: boolean;
+  label: string;
+  formPlaceholder: string;
+}
+
+interface BannerImages {
+  left: string;
+  center: string;
+  right: string;
+}
+
+export interface IHomepageBanner {
+  title: string;
+  content: string;
+  newsletterButton: NewsletterButton;
+  bulletpoints: string[];
+  bannerImages: BannerImages;
+}
+
+interface WorkforceEfficiencyItem {
+  title: string;
+  icon: string;
+  content: string;
+}
+
+export interface IHomepageWorkforceEfficiency {
+  title: string;
+  list: WorkforceEfficiencyItem[];
+}
+
+interface AccordionItem {
+  title: string;
+  content: string;
+  image: string;
+}
+
+export interface IHomepageDiscoverProductFeature {
+  title: string;
+  content: string;
+  accordionList: AccordionItem[];
+}
+
+interface ServiceCard {
+  head: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+  images: string | ServiceCardImages;
+}
+
+interface ServiceCardImages {
+  left: string;
+  top: string;
+  bottom: string;
+}
+
+interface CTAButton {
+  enable: boolean;
+  label: string;
+  link: string;
+}
+
+interface CTA {
+  enable: boolean;
+  head: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+  images: {
+    sm_1: string;
+    sm_2: string;
+    sm_3: string;
+    lg: string;
+  };
+  button: CTAButton;
+}
+
+export interface IHomepageServicesWithCTA {
+  leftCard: ServiceCard;
+  rightCard: ServiceCard;
+  cta: CTA;
+}
+interface WhatWeOfferItem {
+  title: string;
+  image: string;
+  subtitle: string;
+}
+
+interface WhatWeOfferSection {
+  enable: boolean;
+  title: string;
+  list: WhatWeOfferItem[];
+}
+
+interface Feature {
+  title: string;
+  description: string;
+}
+interface HeroImageContainer {
+  leftImage: string;
+  rightImage?: string;
+}
+
+interface HeroRightImageContainer { 
+  leftImageLg: string;
+  rightTopImageSm: string;
+  rightBottomImageMd: string;
+}
+
+interface HeroSection {
+  leftImageContainer: HeroImageContainer;
+  rightImageContainer: HeroRightImageContainer;
+  featureList: Feature[];
+}
+interface Button {
+  enable: boolean;
+  label: string;
+  link: string;
+}
+interface PageContent {
+  banner: IHomepageBanner;
+  workforceEfficiency: IHomepageWorkforceEfficiency;
+  discoverProductFeature: IHomepageDiscoverProductFeature;
+  servicesWithCTA: IHomepageServicesWithCTA;
+  whatWeOffer: WhatWeOfferSection;
+  services: { enable: boolean };
+  hero: HeroSection;
+  faq: { enable: boolean };
+  
+}
+
+
+
+const homepage = await getEntry("homepage", "-index");
+const { banner, discoverProductFeature, servicesWithCTA, services,whatWeOffer, hero, faq }: PageContent = homepage.data;
+--- 
+
+<Base>
+  <ThanksBanner banner={banner}/>
+  
+ 
+
+ 
+</Base>
