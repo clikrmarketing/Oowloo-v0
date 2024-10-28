@@ -16,10 +16,14 @@ const { bannerImages, bulletpoints, content, newsletterButton, title } = banner;
   <div class="half-background bg-theme-dark rounded-2xl"></div>
   <div class="container">
     <div class="flex flex-col items-center gap-16 lg:gap-28 text-center">
-      <div class="lg:col-7 flex flex-col items-center gap-y-8">
+      <div class="lg:col-12 flex flex-col items-center gap-y-8">
         <div>
-          {title && <h1 set:html={title} class="mb-5 text-darkBlue" data-aos="fade-up-sm" data-aos-delay="0" />}
-          {content && <p set:html={content} class="text-lg" data-aos="fade-up-sm" data-aos-delay="100" />} 
+          <h1 class="mb-2 text-darkBlue" data-aos="fade-up-sm" data-aos-delay="0" >
+            Redefining Care Administration. 
+          </h1>
+          <h3 class="mb-5 text-darkBlue" data-aos="fade-up-sm" data-aos-delay="0">Effortless Monitoring, Enhanced Care Outcomes. </h2>
+          
+          {content && <p set:html={content} class="text-lg max-w-3xl" data-aos="fade-up-sm" data-aos-delay="100" />} 
         </div>
           
         

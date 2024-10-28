@@ -50,7 +50,7 @@ plans:
         period: month
         per: user
     badge:
-      enable: true
+      enable: false
       text: "⚡ Hot Plan"
     cta:
       enable: true

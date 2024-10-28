@@ -61,10 +61,10 @@ discoverProductFeature:
   accordionList: 
     - title: Ensure Accountability
       content: "Ensure caretakers are fulfilling their responsibilities with Oowloo’s smart verification tools. Our platform tracks and confirms regular check-ins on critical assets, helping you maintain high standards of care while streamlining oversight."
-      image: "/images/portraits/portrait_1.png"
+      image: "/images/portraits/portrait_6.png"
     - title: Track Your Assets
       content: "Easily monitor the condition of your assets to ensure they receive timely support and maintenance, keeping them in optimal condition."
-      image: "/images/portraits/portrait_2.png"
+      image: "/images/portraits/portrait_7.png"
     - title: Report Efficiently
       content: "Eliminate the need for paper logs with Oowloo’s digital reporting tools, allowing your staff to focus on delivering quality care."
       image: "/images/portraits/portrait_3.png"
@@ -73,7 +73,7 @@ discoverProductFeature:
       image: "/images/portraits/portrait_4.png"
     - title: The Oowloo AI Agent
       content: "Oowloo’s AI agent is available around the clock, offering real-time support to administrators, caregivers, and family members. Whether it's answering routine questions, providing updates, or delivering important reminders, our AI ensures seamless communication and assistance, day or night. With 24-hour availability help is always just a message away."
-      image: "/images/portraits/portrait_1.png"
+      image: "/images/portraits/portrait_5.png"
 
 # Services With CTA
 servicesWithCTA:
