@@ -3,7 +3,7 @@ import ImageMod from "@/components/ImageMod.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Icon } from "astro-icon/components";
 import { getEntry } from "astro:content";
-
+import RightArrowButton from "@/components/RightArrowButton.astro";
 interface ServicesItem {
   title: string;
   subtitle: string;
@@ -21,7 +21,29 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
 
 {
   services.list && services.list.length > 0 && (
-    <section class="section alternate-services">
+    <section class="section alternate-services pt-16">
+
+    <div class="">
+      <div class="p-7 ">
+          <div class="mb-6 flex flex-col justify-center items-center">
+              <h2 class="mb-5 text-darkBlue text-center" data-aos="fade-up-sm" data-aos-delay="0">
+                Innovative Solutions for Your Needs
+              </h2>   
+              <RightArrowButton
+          label='Book A Demo'
+          link='/#contact-us'
+          data-aos="fade-up-sm"
+          data-aos-delay="200"
+          className="btn btn-primary py-4 bg-primary hover:bg-primary/80 text-light "
+        >
+        'Book A Demo'
+        </RightArrowButton>
+          </div>
+      </div>
+    </div>
+
+
+
       <div class="space-y-6">
         {services.list.map((service, index) => {
           const isOddIndex = index % 2 === 0;
@@ -35,7 +57,7 @@ const services = (await getEntry("sections", "services")).data as ServicesSectio
                 ]}
               >
                 <div class="w-full md:w-1/2 max-w-lg">
-                  <h2
+                  <h3
                     class="text-dark/80 mb-3"
                     data-aos="fade-up-sm"
                     data-aos-delay="100"
