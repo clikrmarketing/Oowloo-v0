@@ -6,43 +6,60 @@ draft: false
 
 ---
 
-###### Introduction
+## Web Site Terms of Use
+Please read these Terms of Use (&quot;Terms&quot;) carefully before using the Halotree Inc. (&quot;Halotree&quot;)
+web site (&quot;Site&quot;). By accessing or using the Site, you agree to be bound by these Terms. Terms
+defined in our Privacy Policy have the same meaning here.
 
-Welcome to CloudPeak! We're thrilled to have you on board and excited to help you take control of your financial journey. Before you start using our services, we kindly ask you to read through these Terms of Use carefully. This document is designed to inform you about your rights and responsibilities when using our platform.
+## Use of Content
+The content on the Site—including information, artwork, text, video, audio, and images
+(&quot;Content&quot;)—is protected by copyright laws. You may access and print Content for personal or
+educational purposes only, provided all copyright notices are retained. You may not modify,
+reproduce, republish, post, transmit, or distribute any Content without Halotree&#39;s express written
+consent.
 
-These Terms of Use constitute a legally binding agreement between you and CloudPeak, governing your access to and use of our website, mobile application, and all associated services (collectively, the "Service"). By accessing or using the Service, you agree to comply with and be bound by these terms. If you do not agree to these terms, please refrain from using our Service.
+## User Obligations
+You agree not to use the Site for any unlawful activities or to solicit the performance of any
+activity prohibited by law or contractual obligations. You must comply with all applicable laws,
+rules, and regulations while using the Site.
 
-###### Our Mission
+## Access and Interference
+You agree not to use any automated means—such as robots or spiders—to access the Site
+without Halotree&#39;s express written permission. You also agree not to interfere with the proper
+functioning of the Site.
 
-At CloudPeak, our mission is to simplify financial management for individuals and businesses alike. We provide a comprehensive suite of tools designed to help you track, manage, and optimize your financial health. From budgeting and expense tracking to investment planning and financial reporting, our goal is to empower you with the insights and resources needed to make informed financial decisions.
+## Privacy Policy
+Your use of the Site is subject to our Privacy Policy, which is incorporated into these Terms by
+reference.
 
-###### Agreement Details
+## Links to Third-Party Sites
+The Site may contain links to third-party websites for your convenience. Halotree does not
+endorse or assume responsibility for the content or practices of these sites. Access them at your
+own risk.
 
-By creating an account and using CloudPeak, you acknowledge that you have read, understood, and agree to abide by these Terms of Use. This agreement outlines important information regarding your use of the Service, including:
+## Disclaimer of Warranties
+Your use of the Site and Content is at your own risk. The Site and Content are provided &quot;as is&quot;
+and &quot;as available,&quot; without warranties of any kind, either express or implied, including
+warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement.
 
-- **Account Creation and Security**: Guidelines for creating and maintaining a secure account.
-- **Service Usage**: Permitted uses of the Service and activities that are prohibited.
-- **Subscription and Billing**: Details on our subscription plans, billing cycles, and payment terms.
-- **Privacy and Data Security**: How we collect, use, and protect your personal information.
-- **Intellectual Property**: Your rights to use the Service and our rights to the content and technology provided.
-- **Dispute Resolution**: Procedures for resolving any disputes that may arise between you and CloudPeak.
+## Limitation of Liability
+Halotree and its affiliates shall not be liable for any indirect, incidental, special, consequential, or
+exemplary damages arising from your use of the Site or Content. Halotree&#39;s total liability to you
+for all claims shall not exceed one dollar ($1.00). Some jurisdictions do not allow such
+limitations, so they may not apply to you.
 
-###### Commitment to Transparency
+## Governing Law and Jurisdiction
+These Terms are governed by the laws of the State of Georgia, without regard to its conflict of
+law provisions. You agree to submit to the personal and exclusive jurisdiction of the state and
+federal courts located in Atlanta, Georgia.
 
-We believe in maintaining a transparent relationship with our users. As part of this commitment, we strive to keep you informed about any changes to our Terms of Use. We will notify you of significant updates, and your continued use of the Service will signify your acceptance of these changes.
+## Arbitration
+Any disputes arising from these Terms shall be resolved through binding arbitration in
+accordance with the rules of the American Arbitration Association. Arbitration will be conducted
+on an individual basis, not as a class action. This does not prevent Halotree from seeking
+injunctive relief to protect its intellectual property rights.
 
-###### Your Responsibilities
-
-As a user of CloudPeak, you play a crucial role in maintaining the integrity and security of our platform. You are responsible for safeguarding your account credentials, complying with all applicable laws, and using the Service in a manner that respects the rights and experiences of other users.
-
-###### Support and Assistance
-
-Our dedicated support team is here to help you make the most of CloudPeak. If you have any questions about these Terms of Use or encounter any issues while using the Service, please don't hesitate to reach out to us. We're committed to providing you with the assistance and information you need.
-
-###### Security
-
-Thank you for choosing CloudPeak. We are honored to be a part of your financial journey and are committed to providing you with the tools and support necessary to achieve your financial goals. Please take the time to review these Terms of Use thoroughly, and don't hesitate to contact us if you have any questions or concerns.
-
-###### Conclusion
-
-Thank you for choosing CloudPeak. We are honored to be a part of your financial journey and are committed to providing you with the tools and support necessary to achieve your financial goals. Please take the time to review these Terms of Use thoroughly, and don't hesitate to contact us if you have any questions or concerns.
+## General Terms
+These Terms constitute the entire agreement between you and Halotree regarding the Site. If any
+provision is deemed invalid or unenforceable, the remaining provisions remain in effect. You
+may not assign these Terms without Halotree&#39;s prior written consent.

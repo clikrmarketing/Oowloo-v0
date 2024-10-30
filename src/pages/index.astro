@@ -152,7 +152,7 @@ const { banner, discoverProductFeature, servicesWithCTA, services,whatWeOffer, h
 --- 
 
 <Base>
-  <HomeBanner banner={banner}/>
+  <HomeBanner banner={banner}/> 
   
   {
     whatWeOffer.enable && (
@@ -173,7 +173,7 @@ const { banner, discoverProductFeature, servicesWithCTA, services,whatWeOffer, h
                     />
                   </div>
                   <div class="flex flex-col gap-4">
-                    <h4 class="text-h5 text-left">{item.title}</h4>
+                    <h4 class="text-h5 text-center">{item.title}</h4>
                     <p class="text-dark/80 text-justify">{item.subtitle}</p>
                   </div>
                 </div>
@@ -264,8 +264,8 @@ const { banner, discoverProductFeature, servicesWithCTA, services,whatWeOffer, h
 
   <!-- <ServicesWithCTA servicesWithCTA={servicesWithCTA} /> -->
   <PricingSection isPageHeader={false} />
-  {faq.enable && <FaqSection />}
-  <TestimonialCarousel variant="tertiary" />
+  <!-- {faq.enable && <FaqSection />} -->
+  <!-- <TestimonialCarousel variant="tertiary" /> -->
   <BookADemoSection />
  
 </Base>
