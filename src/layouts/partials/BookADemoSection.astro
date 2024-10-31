@@ -42,9 +42,8 @@ const { head, rightSection, subtitle, title, icon, button } = (await getEntry("s
             <p class="" set:html={subtitle} />
           </div>
           <div class="mt-12">
-            <form action={config.params.contact_form_action} method="post">
-              <div class="g-recaptcha" data-sitekey="6LeL13EqAAAAADcz-ZhzrJMPMA8MK642tL0STXr_"></div>
-              <div class="form-control">
+            <form action={config.params.contact_form_action} method="post" data-botpoison-public-key="pk_784186b0-bf91-4eac-8d42-6e760de90599">
+              <div class="form-control"> 
                 <input
                   type="hidden"
                   name="_redirect"
@@ -97,6 +96,7 @@ const { head, rightSection, subtitle, title, icon, button } = (await getEntry("s
                 )
               }
             </form>
+        
           </div>
         </div>
       </div>
