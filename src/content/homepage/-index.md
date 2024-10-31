@@ -11,7 +11,7 @@ banner:
     -  No Credit Card Required
     -  Cancel Anytime
   bannerImages:
-    left: "/images/homepage/banner-main.jpg"
+    left: "/images/homepage/banner-main-2.png"
     center: "/images/homepage/banner-2.png"
     right: "/images/homepage/banner-3.png"
   trustedBrands:
@@ -30,13 +30,13 @@ whatWeOffer:
   title: "Our Solutions"
   list:
     - title: "Smart Location Management"
-      image: "/images/features/feature-card-1.png"
+      image: "/images/features/feature-card-4.png"
       subtitle: "Boost accountability with strategically placed QR codes throughout your facility. Oowloo’s smart location verification ensures staff reports are generated on-site, giving you real-time reliability and complete operational oversight."
     - title: "Comprehensive Care Analytics"
-      image: "/images/features/feature-card-2.png"
+      image: "/images/features/feature-card-6.png"
       subtitle: "Oowloo’s real-time analytics empower administrators with vital insights into care recipient well-being and staff performance. Our intuitive dashboards drive informed decisions, ensuring better outcomes and greater operational efficiency."
     - title: "AI-Powered Care Companion"
-      image: "/images/features/feature-card-3.png"
+      image: "/images/features/feature-card-5.png"
       subtitle: "Meet the Oowloo AI, your intelligent assistant for staying connected. This advanced agent enables authorized family, friends, and partners to securely check on their loved ones' well-being through natural conversations, as well as via text and email. "
 
 # WorkforceEfficiency
