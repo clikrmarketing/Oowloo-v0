@@ -43,13 +43,14 @@ const { head, rightSection, subtitle, title, icon, button } = (await getEntry("s
           </div>
           <div class="mt-12">
             <form action={config.params.contact_form_action} method="post">
+              <div class="g-recaptcha" data-sitekey="6LeL13EqAAAAADcz-ZhzrJMPMA8MK642tL0STXr_"></div>
               <div class="form-control">
                 <input
                   type="hidden"
                   name="_redirect"
                   value="https://imaginative-scone-1be068.netlify.app/thanks"
                 />
-                <label class="form-label" for="fullName">Full Name</label>
+                <label class="form-label" for="fullName">Full Name</label> 
                 <input
                   class="form-input"
                   type="text"
