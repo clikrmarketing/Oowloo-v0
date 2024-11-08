@@ -55,13 +55,20 @@ const { bannerImages, bulletpoints, content, newsletterButton, title } = banner;
         bannerImages && (
           <div class=" custom-image-wrapper w-full container-lg p-8 md:pt-2 d-relative">
             <div data-aos="fade-up-sm" data-aos-delay="200" class="col-span-12 w-full h-full">
-              <ImageMod
+              {/* <ImageMod
                 src={bannerImages.left}
                 alt="Banner Image"
                 class=" w-full h-full object-cover rounded-2xl"
                 width={1215}
                 height={596}
-              />
+              /> */}
+               <img
+                        width={1215}
+                        height={596}
+                        class=" w-full h-full object-cover rounded-2xl"
+                        src={bannerImages.left}
+                        alt="Banner Image"
+                      />
               
             </div>
            

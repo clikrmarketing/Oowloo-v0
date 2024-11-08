@@ -34,7 +34,7 @@ const isValidPath = images[src] ? true : false;
 {
   isValidPath && (
     <Image
-      src={images[src]() as Promise<{ default: ImageMetadata }>}
+      src={images[src]() as Promise<{ default: ImageMetadata }>} 
       alt={alt}
       width={width}
       height={height}

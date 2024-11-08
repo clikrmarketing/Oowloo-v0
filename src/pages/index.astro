@@ -164,13 +164,20 @@ const { banner, discoverProductFeature, servicesWithCTA, services,whatWeOffer, h
               {whatWeOffer.list.map((item, index) => (
                 <div class="flex flex-col gap-6 w-full" data-aos="fade-up-sm" data-aos-delay={index * 200}>
                   <div class="bg-primary rounded-3xl p-3  xl:min-h-[370px] overflow-hidden">
-                    <ImageMod
+                    {/* <ImageMod
                       width={670}
                       height={560}
                       src={item.image}
                       alt="service image"
                       class="object-cover w-full h-full rounded-2xl hover:scale-110 transition"
-                    />
+                    /> */}
+                      <img
+                        width={670}
+                        height={560}
+                        class="object-cover w-full h-full rounded-2xl hover:scale-110 transition"
+                        src={item.image}
+                        alt="service imag"
+                      />
                   </div>
                   <div class="flex flex-col gap-4">
                     <h4 class="text-h5 text-center">{item.title}</h4>
