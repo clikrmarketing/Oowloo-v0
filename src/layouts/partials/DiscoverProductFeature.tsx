@@ -1,5 +1,6 @@
 import type { IHomepageDiscoverProductFeature } from "@/pages/index.astro";
 import React from "react";
+import ImageMod from "@/components/ImageMod.astro";
 
 const DiscoverProductFeature = ({
   discoverProductFeature,
@@ -38,10 +39,12 @@ const DiscoverProductFeature = ({
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-10 ">
           <div className="w-full md:w-[100%] mx-auto lg:w-[40%] xl:w-[50%]">
             <div className=" aspect-video lg:aspect-square">  
+              
+                  
               <img
                 width={412}
                 height={420}
-                src={activeImage}
+                src={activeImage} 
                 alt="Profile Image"
                 className="rounded-3xl shadow-lg w-full h-full object-cover "
               />

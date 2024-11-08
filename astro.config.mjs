@@ -11,11 +11,11 @@ import config from "./src/config/config.json";
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "https://imaginative-scone-1be068.netlify.app",
+  site: config.site.base_url ? config.site.base_url : "https://oowloo.com/",
   base: config.site.base_path ? config.site.base_path : "/",  
   trailingSlash: config.site.trailing_slash ? "never" : "ignore",
   image: {
-    service: squooshImageService(),
+    service: squooshImageService(), 
   },
   integrations: [
     react(),

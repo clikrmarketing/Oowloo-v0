@@ -18,10 +18,10 @@ interface Props {
 // Destructuring Astro.props to get the component's props
 let { src, alt, width, height, loading, decoding, class: className, format, style } = Astro.props;
 
-src = `/public${src}`;
+src = `/src${src}`;
 
 // Glob pattern to load images from the /public/images folder
-const images = import.meta.glob("/public/images/**/*.{jpeg,jpg,png,gif,svg,avif}");
+const images = import.meta.glob("/src/images/**/*.{jpeg,jpg,png,gif,svg,avif}"); 
 
 // Check if the source path is valid
 const isValidPath = images[src] ? true : false;

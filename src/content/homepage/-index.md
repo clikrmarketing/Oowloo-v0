@@ -13,11 +13,11 @@ banner:
   bannerImages:
     left: "/images/homepage/banner-main-2.png"
     center: "/images/homepage/banner-2.png"
-    right: "/images/homepage/banner-3.png"
+    right: "/images/homepage/banner-3.png" 
   trustedBrands:
     title: "Trusted by 5+ million people at companies like"
     list:
-      - "/images/trustedBrands/1.png"
+      - "/images/trustedBrands/1.png" 
       - "/images/trustedBrands/2.png"
       - "/images/trustedBrands/3.png"
       - "/images/trustedBrands/4.png"

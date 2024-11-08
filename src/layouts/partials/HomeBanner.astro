@@ -4,12 +4,14 @@ import config from "@/config/config.json";
 import type { IHomepageBanner } from "@/pages/index.astro";
 import TrustedBrands from "./TrustedBrands.astro";
 import RightArrowButton from "@/components/RightArrowButton.astro";
+import { Image } from 'astro:assets';
 
 
+import bannerImage from '@/images/banner-main-2.png';
 
 const banner = Astro.props.banner as IHomepageBanner;
 
-const { bannerImages, bulletpoints, content, newsletterButton, title } = banner;
+const { bannerImages, bulletpoints, content, newsletterButton, title } = banner; 
 ---
 
 <section class="section ph-spacing  ">
@@ -27,14 +29,14 @@ const { bannerImages, bulletpoints, content, newsletterButton, title } = banner;
         </div>
           
         
-       <div class="flex items-center gap-4">
+       <div class="flex items-center gap-4"> 
 
           <RightArrowButton
           label='Book A Demo'
           link='/#contact-us'
           data-aos="fade-up-sm"
           data-aos-delay="200"
-          className="btn btn-primary py-4 bg-primary hover:bg-primary/80 text-light "
+          className="btn btn-primary py-4 bg-primary hover:bg-primary/80 text-light " 
         >
         'Book A Demo'
         </RightArrowButton>
@@ -55,12 +57,13 @@ const { bannerImages, bulletpoints, content, newsletterButton, title } = banner;
         bannerImages && (
           <div class=" custom-image-wrapper w-full container-lg p-8 md:pt-2 d-relative">
             <div data-aos="fade-up-sm" data-aos-delay="200" class="col-span-12 w-full h-full">
-              <ImageMod
-                src={bannerImages.left}
+              
+              <Image
+                src={bannerImage}
                 alt="Banner Image"
                 class=" w-full h-full object-cover rounded-2xl"
                 width={1215}
-                height={596}
+                height={596} 
               />
               
             </div>
