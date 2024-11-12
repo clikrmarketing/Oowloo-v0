@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Oowloo - Management Software for Caregivers",
-    "base_url": "https://oowloo.com/",
+    "base_url": "https://imaginative-scone-1be068.netlify.app/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
